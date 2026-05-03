@@ -3,3 +3,17 @@ author: C. J. Blackthorn
 description: Systems, survival, technology, relationships, and the work of staying human.
 theme: minima
 show_excerpts: true
+
+url: "https://cjblackthorn.github.io"
+baseurl: ""
+
+author:
+  name: C. J. Blackthorn
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+feed:
+  posts_limit: 20
