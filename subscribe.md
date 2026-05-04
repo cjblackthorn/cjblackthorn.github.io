@@ -2,11 +2,13 @@
 layout: page
 title: Subscribe
 permalink: /subscribe/
+description: Subscribe to Blackthorn Field Notes for new essays on systems, survival, technology, relationships, disability, access, and the work of staying human.
+image: /assets/images/blackthorn-field-notes-card.png
 ---
 
 # Subscribe to Blackthorn Field Notes
 
-Get new essays on systems, survival, technology, relationships, disability, access, and the work of staying human.
+Get new essays and field notes on systems, survival, technology, relationships, disability, access, advocacy, boundaries, and the work of staying human.
 
 ## Email Updates
 
@@ -18,4 +20,4 @@ Get new articles delivered when they are published:
 
 Use this feed in any RSS reader:
 
-[https://cjblackthorn.github.io/feed.xml](/feed.xml)
+[RSS Feed](/feed.xml)
