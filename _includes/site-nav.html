@@ -1,0 +1,38 @@
+<nav class="site-menu" aria-label="Main navigation">
+  <div class="site-menu-inner">
+    <a class="site-menu-brand" href="{{ '/' | relative_url }}">
+      Blackthorn Field Notes
+    </a>
+
+    <input type="checkbox" id="site-menu-toggle" class="site-menu-toggle" aria-label="Toggle navigation menu">
+
+    <label for="site-menu-toggle" class="site-menu-button">
+      <span class="site-menu-icon">☰</span>
+      <span>Menu</span>
+    </label>
+
+    <ul class="site-menu-list">
+      {% for item in site.data.navigation %}
+        {% if item.children %}
+          <li class="site-menu-item site-menu-has-children">
+            <details class="site-menu-details">
+              <summary>{{ item.title }}</summary>
+
+              <ul class="site-submenu-list">
+                {% for child in item.children %}
+                  <li>
+                    <a href="{{ child.url | relative_url }}">{{ child.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </details>
+          </li>
+        {% else %}
+          <li class="site-menu-item">
+            <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</nav>
