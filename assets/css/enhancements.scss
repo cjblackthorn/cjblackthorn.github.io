@@ -28,6 +28,10 @@
   margin-top: 2rem;
 }
 
+.latest-posts {
+  margin-top: 3.5rem;
+}
+
 .featured-grid,
 .start-grid {
   display: grid;
@@ -43,21 +47,27 @@
   border: 1px solid var(--border);
   border-radius: 14px;
   background: var(--bg-soft);
-  text-decoration: none;
 }
 
 .featured-card:hover,
 .start-card:hover {
-  text-decoration: none;
   border-color: var(--accent);
   transform: translateY(-1px);
 }
 
-.featured-card strong,
-.start-card strong {
-  display: block;
-  color: var(--text);
+.featured-card-title,
+.start-card-title {
+  display: inline-block;
+  color: var(--link);
+  font-weight: 800;
+  text-decoration: none;
   margin-bottom: 0.35rem;
+}
+
+.featured-card-title:hover,
+.start-card-title:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
 }
 
 .featured-card span,
@@ -71,5 +81,9 @@
 @media (max-width: 640px) {
   .home-start-button {
     width: 100%;
+  }
+
+  .latest-posts {
+    margin-top: 3rem;
   }
 }
