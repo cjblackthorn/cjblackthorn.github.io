@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
   <head>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,6 +15,7 @@
   </head>
 
   <body>
+    {% include site-nav.html %}
     <header class="site-header">
       <div class="wrapper">
         <a class="site-title" rel="author" href="{{ '/' | relative_url }}">
