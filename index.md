@@ -2,12 +2,12 @@
 layout: default
 title: Blackthorn Field Notes
 description: Systems, survival, technology, relationships, and the work of staying human.
-image: /assets/images/blackthorn-field-notes-card.png
+image: /assets/images/blackthorn-field-notes-card.PNG
 ---
 
 <section class="home-hero">
   <img
-    src="/assets/images/blackthorn-field-notes-card.png"
+    src="/assets/images/blackthorn-field-notes-card.PNG"
     alt="Blackthorn Field Notes banner"
     class="home-hero-image"
   >
