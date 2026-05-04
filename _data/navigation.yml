@@ -1,11 +1,20 @@
 - title: Home
   url: /
 
-- title: Subscribe
-  url: /subscribe/
+- title: About
+  url: /about/
 
 - title: News
   url: /news/
+
+- title: Books
+  url: /books/
+
+- title: Subscribe
+  url: /subscribe/
+
+- title: Support
+  url: /support/
 
 - title: Categories
   children:
@@ -29,6 +38,3 @@
       url: /categories/survival/
     - title: Personal Essays
       url: /categories/personal-essays/
-
-- title: About
-  url: /about/
