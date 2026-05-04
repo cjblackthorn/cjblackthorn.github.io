@@ -29,6 +29,10 @@ image: /assets/images/blackthorn-field-notes-card.PNG
     broken healthcare, inaccessible systems, poverty, trauma, love, power,
     technology, and what it means to keep going anyway.
   </p>
+
+  <p>
+    <a class="home-start-button" href="{{ '/start-here/' | relative_url }}">Start here →</a>
+  </p>
 </section>
 
 <section class="home-search">
@@ -40,6 +44,31 @@ image: /assets/images/blackthorn-field-notes-card.PNG
     aria-label="Search articles"
   >
   <ul id="search-results"></ul>
+</section>
+
+<section class="featured-posts">
+  <h2>Featured Field Notes</h2>
+
+  <p>
+    New here? These categories are good places to begin.
+  </p>
+
+  <div class="featured-grid">
+    <a class="featured-card" href="{{ '/start-here/' | relative_url }}">
+      <strong>Start Here</strong>
+      <span>A guided path through Blackthorn Field Notes by theme and purpose.</span>
+    </a>
+
+    <a class="featured-card" href="{{ '/categories/disability/' | relative_url }}">
+      <strong>Disability & Access</strong>
+      <span>Essays about pain, mobility, healthcare, accessibility, and systems that fail disabled people.</span>
+    </a>
+
+    <a class="featured-card" href="{{ '/categories/systems/' | relative_url }}">
+      <strong>Systems & Power</strong>
+      <span>Writing that asks what failed, who benefits, who is left behind, and what needs to change.</span>
+    </a>
+  </div>
 </section>
 
 <section class="latest-posts">
