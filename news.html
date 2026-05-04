@@ -1,0 +1,36 @@
+---
+layout: page
+title: News
+permalink: /news/
+description: Latest posts from Blackthorn Field Notes.
+---
+
+<h1>News</h1>
+
+<p>Latest essays, updates, field notes, and published posts.</p>
+
+<ul class="post-list">
+  {% for post in site.posts %}
+    <li>
+      <h2>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h2>
+
+      <p class="post-meta">
+        {{ post.date | date: "%B %-d, %Y" }}
+        {% if post.categories %}
+          ·
+          {% for category in post.categories %}
+            <a href="{{ '/categories/' | append: category | append: '/' | relative_url }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+          {% endfor %}
+        {% endif %}
+      </p>
+
+      {% if post.description %}
+        <p>{{ post.description }}</p>
+      {% else %}
+        <p>{{ post.excerpt | strip_html | truncate: 220 }}</p>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
