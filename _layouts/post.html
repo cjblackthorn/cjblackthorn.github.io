@@ -2,30 +2,32 @@
 layout: default
 ---
 
-<article>
-  <h1>{{ page.title }}</h1>
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
 
-  <p>
-    <small>
+    <p class="post-meta">
       Published {{ page.date | date: "%B %-d, %Y" }}
       {% if page.categories %}
         · {{ page.categories | join: ", " }}
       {% endif %}
-    </small>
-  </p>
+    </p>
+  </header>
 
-  {{ content }}
+  <div class="post-content">
+    {{ content }}
+  </div>
 
   <hr>
 
-  <section>
+  <section class="post-footer">
     <p><strong>If this helped you, share it with someone who needs language for what they are living through.</strong></p>
 
     <p>
       Subscribe for new Blackthorn Field Notes:<br>
-      <a href="/subscribe/">Email Updates</a>
+      <a href="{{ '/subscribe/' | relative_url }}">Email Updates</a>
       |
-      <a href="/feed.xml">RSS Feed</a>
+      <a href="{{ '/feed.xml' | relative_url }}">RSS Feed</a>
     </p>
   </section>
 </article>
