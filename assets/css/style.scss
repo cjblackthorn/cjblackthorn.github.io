@@ -146,3 +146,32 @@ button {
 button:hover {
   border-color: var(--link);
 }
+
+.author-bio {
+  line-height: 1.7;
+}
+
+.author-photo {
+  float: right;
+  width: 220px;
+  max-width: 40%;
+  margin: 0 0 1rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color, #333);
+}
+
+.author-bio::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+@media (max-width: 700px) {
+  .author-photo {
+    float: none;
+    display: block;
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto 1rem auto;
+  }
+}
