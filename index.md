@@ -54,20 +54,20 @@ image: /assets/images/blackthorn-field-notes-card.PNG
   </p>
 
   <div class="featured-grid">
-    <a class="featured-card" href="{{ '/start-here/' | relative_url }}">
-      <strong>Start Here</strong>
+    <div class="featured-card">
+      <a class="featured-card-title" href="{{ '/start-here/' | relative_url }}">Start Here</a>
       <span>A guided path through Blackthorn Field Notes by theme and purpose.</span>
-    </a>
+    </div>
 
-    <a class="featured-card" href="{{ '/categories/disability/' | relative_url }}">
-      <strong>Disability & Access</strong>
+    <div class="featured-card">
+      <a class="featured-card-title" href="{{ '/categories/disability/' | relative_url }}">Disability &amp; Access</a>
       <span>Essays about pain, mobility, healthcare, accessibility, and systems that fail disabled people.</span>
-    </a>
+    </div>
 
-    <a class="featured-card" href="{{ '/categories/systems/' | relative_url }}">
-      <strong>Systems & Power</strong>
+    <div class="featured-card">
+      <a class="featured-card-title" href="{{ '/categories/systems/' | relative_url }}">Systems &amp; Power</a>
       <span>Writing that asks what failed, who benefits, who is left behind, and what needs to change.</span>
-    </a>
+    </div>
   </div>
 </section>
 
