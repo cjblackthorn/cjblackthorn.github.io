@@ -458,41 +458,92 @@ button:hover {
    ========================= */
 
 .post-share {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(145px, max-content));
+  gap: 0.7rem;
   align-items: center;
-  gap: 0.75rem;
-  margin: 1.25rem 0 1.75rem;
+  margin: 1.35rem 0 2rem;
 }
 
-.share-button,
-.share-link {
-  display: inline-block;
-  width: fit-content;
-  padding: 0.6rem 1rem;
-  border: 1px solid currentColor;
-  border-radius: 999px;
-  background: var(--bg-soft);
-  color: var(--link);
-  text-decoration: none;
-  font: inherit;
-  font-weight: 600;
-  line-height: 1.2;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+.post-share .share-button,
+.post-share .share-link {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  width: auto !important;
+  padding: 0.7rem 1rem !important;
+  border: 1px solid var(--accent) !important;
+  border-radius: 999px !important;
+  background: transparent !important;
+  color: var(--link) !important;
+  text-decoration: none !important;
+  font: inherit !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  text-align: center;
+  box-shadow: none !important;
+  transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
 }
 
-.share-button:hover,
-.share-link:hover {
-  color: var(--link-hover);
-  text-decoration: none;
-  opacity: 0.9;
+.post-share .share-button:hover,
+.post-share .share-link:hover {
+  background: rgba(143, 29, 44, 0.12) !important;
+  color: var(--link-hover) !important;
+  text-decoration: none !important;
+  opacity: 0.95;
   transform: translateY(-1px);
 }
 
-.share-button:focus,
-.share-link:focus {
+.post-share .share-button:focus,
+.post-share .share-link:focus {
   outline: 2px solid currentColor;
-  outline-offset: 2px;
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .post-share {
+    grid-template-columns: 1fr;
+  }
+
+  .post-share .share-button,
+  .post-share .share-link {
+    width: 100% !important;
+  }
+}
+
+@media print {
+  .site-menu,
+  .site-header,
+  .post-share,
+  .post-footer .support-button,
+  .post-footer a[href*="/support/"],
+  .site-footer {
+    display: none !important;
+  }
+
+  body,
+  .page-content,
+  .post,
+  article {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  a,
+  a:visited,
+  p,
+  li,
+  .post-title,
+  .post-content h1,
+  .post-content h2,
+  .post-content h3,
+  .post-content h4 {
+    color: #000000 !important;
+  }
 }
 
 /* =========================
