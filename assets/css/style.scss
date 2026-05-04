@@ -434,3 +434,48 @@ button:hover {
     margin: 0 auto 1rem auto;
   }
 }
+
+/* Post title + heading visibility on dark theme */
+.post-title,
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4 {
+  color: #e8e8e8;
+}
+
+/* Tighten heading spacing */
+.post-header {
+  margin-bottom: 1.25rem;
+}
+
+.post-title {
+  margin-bottom: 0.35rem;
+  line-height: 1.2;
+}
+
+.post-meta {
+  margin-bottom: 1.25rem;
+}
+
+/* Make section headings visible and not too far apart */
+.post-content h2 {
+  margin-top: 1.6rem;
+  margin-bottom: 0.55rem;
+  line-height: 1.25;
+}
+
+.post-content h3 {
+  margin-top: 1.2rem;
+  margin-bottom: 0.45rem;
+}
+
+/* Tighter paragraph spacing */
+.post-content p {
+  margin-bottom: 0.85rem;
+}
+
+/* Optional: slightly tighter overall article spacing */
+.post-content {
+  line-height: 1.55;
+}
