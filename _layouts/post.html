@@ -28,21 +28,9 @@ layout: default
         Share this post
       </button>
 
-      <button class="share-button" type="button" data-copy-link-button>
-        Copy link
-      </button>
-
       <button class="share-button" type="button" data-print-button>
         Save as PDF
       </button>
-
-      <a class="share-link" href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}" target="_blank" rel="noopener">
-        Facebook
-      </a>
-
-      <a class="share-link" href="mailto:?subject={{ page.title | url_encode }}&body={{ page.url | absolute_url | url_encode }}">
-        Email
-      </a>
     </div>
 
     <p>
@@ -62,7 +50,6 @@ layout: default
 <script>
   (function () {
     var shareButton = document.querySelector('[data-share-button]');
-    var copyButton = document.querySelector('[data-copy-link-button]');
     var printButton = document.querySelector('[data-print-button]');
     var postTitle = {{ page.title | jsonify }};
     var postUrl = {{ page.url | absolute_url | jsonify }};
@@ -116,12 +103,6 @@ layout: default
         } else {
           copyPostUrl(shareButton);
         }
-      });
-    }
-
-    if (copyButton) {
-      copyButton.addEventListener('click', function () {
-        copyPostUrl(copyButton);
       });
     }
 
