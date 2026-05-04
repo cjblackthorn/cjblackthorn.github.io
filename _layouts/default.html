@@ -3,16 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     {% seo %}
-
     <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
   </head>
 
   <body>
     <header class="site-header">
       <div class="wrapper">
-        <a class="site-title" href="{{ '/' | relative_url }}">
+        <a class="site-title" rel="author" href="{{ '/' | relative_url }}">
           {{ site.title }}
         </a>
       </div>
@@ -27,7 +25,7 @@
     <footer class="site-footer">
       <div class="wrapper">
         <p>{{ site.description }}</p>
-        <p>&copy; {{ site.time | date: '%Y' }} {{ site.author }}</p>
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name | default: site.author }}</p>
       </div>
     </footer>
   </body>
