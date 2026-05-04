@@ -24,8 +24,16 @@ layout: default
     <p><strong>If this helped you, share it with someone who needs language for what they are living through.</strong></p>
 
     <div class="post-share" aria-label="Share this post">
-      <button class="share-button" type="button" onclick="if (navigator.share) { navigator.share({ title: document.title, url: window.location.href }); } else { navigator.clipboard.writeText(window.location.href); this.textContent = 'Link copied'; }">
+      <button class="share-button" type="button" data-share-button>
         Share this post
+      </button>
+
+      <button class="share-button" type="button" data-copy-link-button>
+        Copy link
+      </button>
+
+      <button class="share-button" type="button" data-print-button>
+        Save as PDF
       </button>
 
       <a class="share-link" href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}" target="_blank" rel="noopener">
@@ -50,3 +58,77 @@ layout: default
     </p>
   </section>
 </article>
+
+<script>
+  (function () {
+    var shareButton = document.querySelector('[data-share-button]');
+    var copyButton = document.querySelector('[data-copy-link-button]');
+    var printButton = document.querySelector('[data-print-button]');
+    var postTitle = {{ page.title | jsonify }};
+    var postUrl = {{ page.url | absolute_url | jsonify }};
+
+    function temporarilySetText(button, text) {
+      var originalText = button.textContent;
+      button.textContent = text;
+      window.setTimeout(function () {
+        button.textContent = originalText;
+      }, 2000);
+    }
+
+    async function copyPostUrl(button) {
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(postUrl);
+        } else {
+          var textArea = document.createElement('textarea');
+          textArea.value = postUrl;
+          textArea.setAttribute('readonly', '');
+          textArea.style.position = 'absolute';
+          textArea.style.left = '-9999px';
+          document.body.appendChild(textArea);
+          textArea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textArea);
+        }
+
+        temporarilySetText(button, 'Link copied');
+      } catch (error) {
+        temporarilySetText(button, 'Copy failed');
+      }
+    }
+
+    if (shareButton) {
+      if (!navigator.share) {
+        shareButton.textContent = 'Copy link';
+      }
+
+      shareButton.addEventListener('click', async function () {
+        if (navigator.share) {
+          try {
+            await navigator.share({
+              title: postTitle,
+              text: postTitle,
+              url: postUrl
+            });
+          } catch (error) {
+            // User cancelled the native share sheet. No action needed.
+          }
+        } else {
+          copyPostUrl(shareButton);
+        }
+      });
+    }
+
+    if (copyButton) {
+      copyButton.addEventListener('click', function () {
+        copyPostUrl(copyButton);
+      });
+    }
+
+    if (printButton) {
+      printButton.addEventListener('click', function () {
+        window.print();
+      });
+    }
+  })();
+</script>
