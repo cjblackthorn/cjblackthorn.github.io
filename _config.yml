@@ -7,6 +7,12 @@ show_excerpts: true
 url: "https://cjblackthorn.github.io"
 baseurl: ""
 
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/blackthorn-field-notes-card.png
+
 author:
   name: C. J. Blackthorn
 
