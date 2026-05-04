@@ -3,13 +3,13 @@ layout: page
 title: About
 permalink: /about/
 description: About C. J. Blackthorn, writer, survivor, technologist, disability advocate, and author of Blackthorn Field Notes.
-image: /assets/images/cj-blackthorn.jpg
+image: /assets/images/cj-blackthorn.PNG
 ---
 
 <div class="author-bio">
 
   <img
-    src="/assets/images/cj-blackthorn.jpg"
+    src="/assets/images/cj-blackthorn.PNG"
     alt="Portrait of C. J. Blackthorn"
     class="author-photo"
   />
