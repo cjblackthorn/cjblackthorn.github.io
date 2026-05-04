@@ -11,7 +11,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/images/blackthorn-field-notes-card.png
+      image: /assets/images/blackthorn-field-notes-card.PNG
 
 author:
   name: C. J. Blackthorn
