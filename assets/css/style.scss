@@ -1,0 +1,148 @@
+---
+---
+
+@import "minima";
+
+/* Blackthorn Field Notes — system-aware theme */
+
+:root {
+  --bg: #f8f5f0;
+  --bg-soft: #ffffff;
+  --text: #1d1b1f;
+  --muted: #5f5962;
+  --link: #8f1d2c;
+  --link-hover: #b92d40;
+  --border: #ddd5cc;
+  --accent: #8f1d2c;
+  --header-bg: #ffffff;
+  --code-bg: #f0ebe4;
+}
+
+/* Dark mode follows the visitor's system setting */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f0f12;
+    --bg-soft: #17171c;
+    --text: #e8e3dc;
+    --muted: #b8b0a7;
+    --link: #d86b6b;
+    --link-hover: #ff8a8a;
+    --border: #2a2a33;
+    --accent: #8f1d2c;
+    --header-bg: #0a0a0d;
+    --code-bg: #17171c;
+  }
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.site-header,
+.site-footer {
+  background: var(--header-bg);
+  border-color: var(--border);
+}
+
+.site-title,
+.site-title:visited,
+.site-nav .page-link {
+  color: var(--text);
+}
+
+.site-title:hover,
+.site-nav .page-link:hover {
+  color: var(--link-hover);
+  text-decoration: none;
+}
+
+.page-content,
+.post,
+.page,
+article {
+  background: var(--bg);
+}
+
+.wrapper {
+  max-width: 860px;
+}
+
+.post-title,
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.page-heading {
+  color: var(--text);
+}
+
+.post-meta {
+  color: var(--muted);
+}
+
+p,
+li {
+  color: var(--text);
+}
+
+a,
+a:visited {
+  color: var(--link);
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+blockquote {
+  color: var(--muted);
+  border-left: 4px solid var(--accent);
+  background: var(--bg-soft);
+  padding: 0.8rem 1rem;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+pre,
+code {
+  background: var(--code-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.post-list > li {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+}
+
+.footer-col-wrapper,
+.site-footer,
+.site-footer p,
+.site-footer li {
+  color: var(--muted);
+}
+
+input,
+textarea,
+button {
+  background: var(--bg-soft);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+button {
+  cursor: pointer;
+  padding: 0.5rem 0.8rem;
+}
+
+button:hover {
+  border-color: var(--link);
+}
