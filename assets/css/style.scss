@@ -3,6 +3,265 @@
 
 @import "minima";
 
+/* =========================
+   Blackthorn Field Notes Menu
+   ========================= */
+
+.site-menu {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--background-color, #111);
+  border-bottom: 1px solid var(--border-color, #333);
+}
+
+.site-menu-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-menu-brand {
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  color: var(--text-color, #eee);
+}
+
+.site-menu-toggle {
+  display: none;
+}
+
+.site-menu-button {
+  display: none;
+  cursor: pointer;
+  border: 1px solid var(--border-color, #444);
+  border-radius: 999px;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text-color, #eee);
+}
+
+.site-menu-icon {
+  margin-right: 0.25rem;
+}
+
+.site-menu-list {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-menu-item {
+  position: relative;
+}
+
+.site-menu-item > a,
+.site-menu-details > summary {
+  display: block;
+  padding: 0.55rem 0.75rem;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text-color, #eee);
+  cursor: pointer;
+}
+
+.site-menu-item > a:hover,
+.site-menu-details > summary:hover,
+.site-menu-item > a:focus,
+.site-menu-details > summary:focus {
+  background: rgba(127, 127, 127, 0.15);
+}
+
+.site-menu-details > summary {
+  list-style: none;
+}
+
+.site-menu-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.site-menu-details > summary::after {
+  content: "▾";
+  font-size: 0.7rem;
+  margin-left: 0.35rem;
+  opacity: 0.75;
+}
+
+.site-submenu-list {
+  position: absolute;
+  right: 0;
+  min-width: 210px;
+  list-style: none;
+  padding: 0.5rem;
+  margin: 0.35rem 0 0;
+  background: var(--background-color, #111);
+  border: 1px solid var(--border-color, #333);
+  border-radius: 12px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+}
+
+.site-submenu-list li {
+  margin: 0;
+}
+
+.site-submenu-list a {
+  display: block;
+  padding: 0.55rem 0.7rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-color, #eee);
+}
+
+.site-submenu-list a:hover,
+.site-submenu-list a:focus {
+  background: rgba(127, 127, 127, 0.15);
+}
+
+/* =========================
+   Mobile Menu
+   ========================= */
+
+@media (max-width: 760px) {
+  .site-menu-inner {
+    flex-wrap: wrap;
+  }
+
+  .site-menu-button {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .site-menu-list {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.25rem;
+    padding-top: 0.75rem;
+  }
+
+  .site-menu-toggle:checked ~ .site-menu-list {
+    display: flex;
+  }
+
+  .site-menu-item > a,
+  .site-menu-details > summary {
+    border-radius: 10px;
+    padding: 0.75rem;
+  }
+
+  .site-submenu-list {
+    position: static;
+    min-width: unset;
+    box-shadow: none;
+    margin: 0.25rem 0 0.5rem 0.75rem;
+    border-radius: 10px;
+  }
+}
+
+/* =========================
+   Author Bio Image
+   ========================= */
+
+.author-bio {
+  line-height: 1.7;
+}
+
+.author-photo {
+  float: right;
+  width: 220px;
+  max-width: 40%;
+  margin: 0 0 1rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color, #333);
+}
+
+.author-bio::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+@media (max-width: 700px) {
+  .author-photo {
+    float: none;
+    display: block;
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto 1rem auto;
+  }
+}
+
+/* =========================
+   Homepage / Cards
+   ========================= */
+
+.home-hero {
+  margin-bottom: 2rem;
+}
+
+.home-hero-image {
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-color, #333);
+}
+
+.tagline {
+  font-size: 1.15rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.post-list,
+.category-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.post-list li,
+.category-list li {
+  margin-bottom: 1.5rem;
+}
+
+.post-meta {
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.category-grid a {
+  display: block;
+  padding: 1rem;
+  border: 1px solid var(--border-color, #333);
+  border-radius: 12px;
+  text-decoration: none;
+}
+
+.category-grid span {
+  display: block;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-top: 0.25rem;
+}
+
 /* Blackthorn Field Notes — system-aware theme */
 
 :root {
