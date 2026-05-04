@@ -7,8 +7,6 @@ tags: [launch, advocacy, disability, access, systems, survival, poverty, healthc
 description: "The launch of Blackthorn Field Notes: a place for advocacy, disability, systems, survival, and the work of staying human."
 ---
 
-# Welcome to Blackthorn Field Notes
-
 ## A Place That Is Mine
 
 I started **Blackthorn Field Notes** because I needed a place that was mine. Not borrowed from an algorithm. Not buried under platform rules I do not control. Not dependent on whether a social media feed decides my words are worth showing to people that day. I needed a place where my writing could live without being scattered, swallowed, hidden, shortened, flagged, buried, or reshaped to fit someone else’s idea of what expression is supposed to look like.
