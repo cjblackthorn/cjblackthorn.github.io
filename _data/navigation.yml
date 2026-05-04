@@ -1,0 +1,34 @@
+- title: Home
+  url: /
+
+- title: Subscribe
+  url: /subscribe/
+
+- title: News
+  url: /news/
+
+- title: Categories
+  children:
+    - title: Advocacy
+      url: /categories/advocacy/
+    - title: Disability
+      url: /categories/disability/
+    - title: Accessibility
+      url: /categories/accessibility/
+    - title: Healthcare
+      url: /categories/healthcare/
+    - title: Technology
+      url: /categories/technology/
+    - title: Systems
+      url: /categories/systems/
+    - title: Relationships
+      url: /categories/relationships/
+    - title: Boundaries
+      url: /categories/boundaries/
+    - title: Survival
+      url: /categories/survival/
+    - title: Personal Essays
+      url: /categories/personal-essays/
+
+- title: About
+  url: /about/
