@@ -1,12 +1,31 @@
-<hr>
+---
+layout: default
+---
 
-<section>
-  <p><strong>If this helped you, share it with someone who needs language for what they are living through.</strong></p>
+<article>
+  <h1>{{ page.title }}</h1>
 
   <p>
-    Subscribe for new Blackthorn Field Notes:<br>
-    <a href="/subscribe/">Email Updates</a>
-    |
-    <a href="/feed.xml">RSS Feed</a>
+    <small>
+      Published {{ page.date | date: "%B %-d, %Y" }}
+      {% if page.categories %}
+        · {{ page.categories | join: ", " }}
+      {% endif %}
+    </small>
   </p>
-</section>
+
+  {{ content }}
+
+  <hr>
+
+  <section>
+    <p><strong>If this helped you, share it with someone who needs language for what they are living through.</strong></p>
+
+    <p>
+      Subscribe for new Blackthorn Field Notes:<br>
+      <a href="/subscribe/">Email Updates</a>
+      |
+      <a href="/feed.xml">RSS Feed</a>
+    </p>
+  </section>
+</article>
