@@ -14,6 +14,20 @@ layout: default
     </p>
   </header>
 
+  {% if page.content_note %}
+    <section class="content-note" aria-label="Content note">
+      <strong>Content note:</strong>
+      <span>{{ page.content_note }}</span>
+    </section>
+  {% endif %}
+
+  {% if page.plain_summary %}
+    <section class="plain-summary" aria-label="Plain language summary">
+      <h2>In plain terms</h2>
+      <p>{{ page.plain_summary }}</p>
+    </section>
+  {% endif %}
+
   <section class="article-reader" aria-label="Read article aloud">
     <span class="article-reader-label">Listen to this article:</span>
 
@@ -32,11 +46,27 @@ layout: default
     <button class="reader-button" type="button" data-stop-article>
       Stop
     </button>
+
+    <label class="reader-speed-label">
+      Speed
+      <select class="reader-speed-select" data-reader-speed>
+        <option value="0.8">Slower</option>
+        <option value="0.95" selected>Normal</option>
+        <option value="1.15">Faster</option>
+      </select>
+    </label>
   </section>
+
+  <nav class="article-toc" aria-label="On this page" hidden>
+    <h2>On this page</h2>
+    <ol data-article-toc-list></ol>
+  </nav>
 
   <div class="post-content">
     {{ content }}
   </div>
+
+  <p class="print-source">Source: {{ page.url | absolute_url }}</p>
 
   <hr>
 
@@ -75,6 +105,7 @@ layout: default
     var pauseButton = document.querySelector('[data-pause-article]');
     var resumeButton = document.querySelector('[data-resume-article]');
     var stopButton = document.querySelector('[data-stop-article]');
+    var speedSelect = document.querySelector('[data-reader-speed]');
     var postTitle = {{ page.title | jsonify }};
     var postUrl = {{ page.url | absolute_url | jsonify }};
     var currentUtterance = null;
@@ -111,8 +142,20 @@ layout: default
 
     function getArticleText() {
       var content = document.querySelector('.post-content');
-      if (!content) return postTitle;
-      return postTitle + '. ' + content.innerText;
+      var note = document.querySelector('.content-note');
+      var summary = document.querySelector('.plain-summary');
+      var parts = [postTitle];
+
+      if (note) parts.push(note.innerText);
+      if (summary) parts.push(summary.innerText);
+      if (content) parts.push(content.innerText);
+
+      return parts.join('. ');
+    }
+
+    function getReaderSpeed() {
+      if (!speedSelect) return 0.95;
+      return Number(speedSelect.value) || 0.95;
     }
 
     function stopReading() {
@@ -122,6 +165,31 @@ layout: default
       currentUtterance = null;
       if (readButton) readButton.textContent = 'Read aloud';
     }
+
+    function buildTableOfContents() {
+      var toc = document.querySelector('.article-toc');
+      var list = document.querySelector('[data-article-toc-list]');
+      var headings = Array.prototype.slice.call(document.querySelectorAll('.post-content h2'));
+
+      if (!toc || !list || headings.length < 2) return;
+
+      headings.forEach(function (heading, index) {
+        if (!heading.id) {
+          heading.id = 'section-' + (index + 1);
+        }
+
+        var item = document.createElement('li');
+        var link = document.createElement('a');
+        link.href = '#' + heading.id;
+        link.textContent = heading.textContent;
+        item.appendChild(link);
+        list.appendChild(item);
+      });
+
+      toc.hidden = false;
+    }
+
+    buildTableOfContents();
 
     if (shareButton) {
       if (!navigator.share) {
@@ -159,12 +227,13 @@ layout: default
         if (pauseButton) pauseButton.disabled = true;
         if (resumeButton) resumeButton.disabled = true;
         if (stopButton) stopButton.disabled = true;
+        if (speedSelect) speedSelect.disabled = true;
       } else {
         readButton.addEventListener('click', function () {
           stopReading();
 
           currentUtterance = new SpeechSynthesisUtterance(getArticleText());
-          currentUtterance.rate = 0.95;
+          currentUtterance.rate = getReaderSpeed();
           currentUtterance.pitch = 1;
 
           currentUtterance.onend = function () {
@@ -199,6 +268,15 @@ layout: default
 
         if (stopButton) {
           stopButton.addEventListener('click', stopReading);
+        }
+
+        if (speedSelect) {
+          speedSelect.addEventListener('change', function () {
+            if (window.speechSynthesis.speaking) {
+              stopReading();
+              temporarilySetText(readButton, 'Speed changed');
+            }
+          });
         }
 
         window.addEventListener('beforeunload', stopReading);
