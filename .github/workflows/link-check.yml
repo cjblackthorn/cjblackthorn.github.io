@@ -1,10 +1,6 @@
 name: Link check
 
 on:
-  pull_request:
-    branches:
-      - main
-      - develop
   workflow_dispatch:
   schedule:
     - cron: '0 12 * * 1'
@@ -33,9 +29,8 @@ jobs:
       - name: Build site
         run: jekyll build
 
-      - name: Check links
+      - name: Check internal links
         run: |
           htmlproofer ./_site \
             --disable-external \
-            --ignore-empty-alt \
             --allow-hash-href
