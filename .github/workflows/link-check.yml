@@ -1,0 +1,41 @@
+name: Link check
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+  workflow_dispatch:
+  schedule:
+    - cron: '0 12 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: false
+
+      - name: Install Jekyll and link checker
+        run: |
+          gem install jekyll bundler jekyll-feed jekyll-seo-tag jekyll-sitemap minima html-proofer
+
+      - name: Build site
+        run: jekyll build
+
+      - name: Check links
+        run: |
+          htmlproofer ./_site \
+            --disable-external \
+            --ignore-empty-alt \
+            --allow-hash-href
