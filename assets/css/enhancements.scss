@@ -51,7 +51,8 @@
   .share-button:hover,
   .share-link:hover,
   .reader-button:hover,
-  .home-start-button:hover {
+  .home-start-button:hover,
+  .contact-button:hover {
     transform: none !important;
   }
 }
@@ -131,6 +132,37 @@
   color: var(--muted);
   font-size: 0.95rem;
   line-height: 1.45;
+}
+
+/* =========================
+   Contact Page
+   ========================= */
+
+.contact-actions {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 0.85rem 1.2rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--link);
+  text-decoration: none;
+  font-weight: 800;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-button:hover {
+  background: rgba(143, 29, 44, 0.12);
+  color: var(--link-hover);
+  text-decoration: none;
+  transform: translateY(-1px);
 }
 
 /* =========================
@@ -246,7 +278,8 @@
 }
 
 @media (max-width: 640px) {
-  .home-start-button {
+  .home-start-button,
+  .contact-button {
     width: 100%;
   }
 
