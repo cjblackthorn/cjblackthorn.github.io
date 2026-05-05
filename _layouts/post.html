@@ -14,6 +14,26 @@ layout: default
     </p>
   </header>
 
+  <section class="article-reader" aria-label="Read article aloud">
+    <span class="article-reader-label">Listen to this article:</span>
+
+    <button class="reader-button" type="button" data-read-article>
+      Read aloud
+    </button>
+
+    <button class="reader-button" type="button" data-pause-article>
+      Pause
+    </button>
+
+    <button class="reader-button" type="button" data-resume-article>
+      Resume
+    </button>
+
+    <button class="reader-button" type="button" data-stop-article>
+      Stop
+    </button>
+  </section>
+
   <div class="post-content">
     {{ content }}
   </div>
@@ -51,8 +71,13 @@ layout: default
   (function () {
     var shareButton = document.querySelector('[data-share-button]');
     var printButton = document.querySelector('[data-print-button]');
+    var readButton = document.querySelector('[data-read-article]');
+    var pauseButton = document.querySelector('[data-pause-article]');
+    var resumeButton = document.querySelector('[data-resume-article]');
+    var stopButton = document.querySelector('[data-stop-article]');
     var postTitle = {{ page.title | jsonify }};
     var postUrl = {{ page.url | absolute_url | jsonify }};
+    var currentUtterance = null;
 
     function temporarilySetText(button, text) {
       var originalText = button.textContent;
@@ -84,6 +109,20 @@ layout: default
       }
     }
 
+    function getArticleText() {
+      var content = document.querySelector('.post-content');
+      if (!content) return postTitle;
+      return postTitle + '. ' + content.innerText;
+    }
+
+    function stopReading() {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+      currentUtterance = null;
+      if (readButton) readButton.textContent = 'Read aloud';
+    }
+
     if (shareButton) {
       if (!navigator.share) {
         shareButton.textContent = 'Copy link';
@@ -108,8 +147,62 @@ layout: default
 
     if (printButton) {
       printButton.addEventListener('click', function () {
+        stopReading();
         window.print();
       });
+    }
+
+    if (readButton) {
+      if (!('speechSynthesis' in window) || typeof SpeechSynthesisUtterance === 'undefined') {
+        readButton.disabled = true;
+        readButton.textContent = 'Read aloud unavailable';
+        if (pauseButton) pauseButton.disabled = true;
+        if (resumeButton) resumeButton.disabled = true;
+        if (stopButton) stopButton.disabled = true;
+      } else {
+        readButton.addEventListener('click', function () {
+          stopReading();
+
+          currentUtterance = new SpeechSynthesisUtterance(getArticleText());
+          currentUtterance.rate = 0.95;
+          currentUtterance.pitch = 1;
+
+          currentUtterance.onend = function () {
+            currentUtterance = null;
+            readButton.textContent = 'Read aloud';
+          };
+
+          currentUtterance.onerror = function () {
+            currentUtterance = null;
+            readButton.textContent = 'Read aloud';
+          };
+
+          readButton.textContent = 'Reading...';
+          window.speechSynthesis.speak(currentUtterance);
+        });
+
+        if (pauseButton) {
+          pauseButton.addEventListener('click', function () {
+            if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
+              window.speechSynthesis.pause();
+            }
+          });
+        }
+
+        if (resumeButton) {
+          resumeButton.addEventListener('click', function () {
+            if (window.speechSynthesis.paused) {
+              window.speechSynthesis.resume();
+            }
+          });
+        }
+
+        if (stopButton) {
+          stopButton.addEventListener('click', stopReading);
+        }
+
+        window.addEventListener('beforeunload', stopReading);
+      }
     }
   })();
 </script>
