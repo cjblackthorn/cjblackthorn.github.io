@@ -23,6 +23,16 @@
 
     {% include site-nav.html %}
 
+    <section class="display-tools" aria-label="Display options">
+      <button class="display-tool-button" type="button" data-large-text-toggle aria-pressed="false">
+        Larger text
+      </button>
+
+      <button class="display-tool-button" type="button" data-high-contrast-toggle aria-pressed="false">
+        High contrast
+      </button>
+    </section>
+
     <header class="site-header">
       <div class="wrapper">
         <a class="site-title" rel="author" href="{{ '/' | relative_url }}">
@@ -95,5 +105,57 @@
         {% endunless %}
       </div>
     </footer>
+
+    <script>
+      (function () {
+        var largeTextButton = document.querySelector('[data-large-text-toggle]');
+        var highContrastButton = document.querySelector('[data-high-contrast-toggle]');
+
+        function getPreference(key) {
+          try {
+            return window.localStorage.getItem(key) === 'true';
+          } catch (error) {
+            return false;
+          }
+        }
+
+        function setPreference(key, value) {
+          try {
+            window.localStorage.setItem(key, value ? 'true' : 'false');
+          } catch (error) {
+            // Preferences may be unavailable in private browsing or restricted browsers.
+          }
+        }
+
+        function applyPreference(className, button, enabled) {
+          document.body.classList.toggle(className, enabled);
+          if (button) {
+            button.setAttribute('aria-pressed', enabled ? 'true' : 'false');
+          }
+        }
+
+        var largeTextEnabled = getPreference('blackthorn-large-text');
+        var highContrastEnabled = getPreference('blackthorn-high-contrast');
+
+        applyPreference('large-text', largeTextButton, largeTextEnabled);
+        applyPreference('high-contrast', highContrastButton, highContrastEnabled);
+
+        if (largeTextButton) {
+          largeTextButton.addEventListener('click', function () {
+            largeTextEnabled = !largeTextEnabled;
+            setPreference('blackthorn-large-text', largeTextEnabled);
+            applyPreference('large-text', largeTextButton, largeTextEnabled);
+          });
+        }
+
+        if (highContrastButton) {
+          highContrastButton.addEventListener('click', function () {
+            highContrastEnabled = !highContrastEnabled;
+            setPreference('blackthorn-high-contrast', highContrastEnabled);
+            applyPreference('high-contrast', highContrastButton, highContrastEnabled);
+          });
+        }
+      })();
+    </script>
   </body>
 </html>
