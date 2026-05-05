@@ -7,6 +7,8 @@ tags: [relationships, boundaries, communication, accountability, trust, repair]
 description: "A relationship is not one person keeping balance for two. It is shared responsibility, repair, and the work of staying steady together."
 plain_summary: "This article explains how healthy relationships require shared responsibility, emotional accountability, repair, and boundaries."
 content_note: "Discusses emotional conflict, trauma responses, relationship instability, and unhealthy communication patterns."
+featured: true
+featured_order: 1
 ---
 
 ## Opening Hook
