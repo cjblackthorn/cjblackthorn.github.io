@@ -12,6 +12,10 @@ Blackthorn Field Notes is a place for essays about systems, survival, technology
 
 If you are new here, you do not have to read everything in order. Start with the doorway that sounds closest to what brought you here.
 
+<p>
+  <a class="home-start-button" href="{{ '/start-here-by-need/' | relative_url }}">Start here by need →</a>
+</p>
+
 <div class="start-grid">
   <div class="start-card">
     <a class="start-card-title" href="/categories/disability/">Disability &amp; Access</a>
