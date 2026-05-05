@@ -46,29 +46,49 @@ image: /assets/images/blackthorn-field-notes-card.PNG
   <ul id="search-results"></ul>
 </section>
 
+{% assign featured_posts = site.posts | where: 'featured', true | sort: 'featured_order' %}
 <section class="featured-posts">
   <h2>Featured Field Notes</h2>
 
-  <p>
-    New here? These categories are good places to begin.
-  </p>
+  {% if featured_posts.size > 0 %}
+    <p>
+      Start with these selected essays.
+    </p>
 
-  <div class="featured-grid">
-    <div class="featured-card">
-      <a class="featured-card-title" href="{{ '/start-here/' | relative_url }}">Start Here</a>
-      <span>A guided path through Blackthorn Field Notes by theme and purpose.</span>
+    <div class="featured-grid">
+      {% for post in featured_posts limit:3 %}
+        <div class="featured-card">
+          <a class="featured-card-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          {% if post.description %}
+            <span>{{ post.description }}</span>
+          {% else %}
+            <span>{{ post.excerpt | strip_html | truncate: 160 }}</span>
+          {% endif %}
+        </div>
+      {% endfor %}
     </div>
+  {% else %}
+    <p>
+      New here? These categories are good places to begin.
+    </p>
 
-    <div class="featured-card">
-      <a class="featured-card-title" href="{{ '/categories/disability/' | relative_url }}">Disability &amp; Access</a>
-      <span>Essays about pain, mobility, healthcare, accessibility, and systems that fail disabled people.</span>
-    </div>
+    <div class="featured-grid">
+      <div class="featured-card">
+        <a class="featured-card-title" href="{{ '/start-here/' | relative_url }}">Start Here</a>
+        <span>A guided path through Blackthorn Field Notes by theme and purpose.</span>
+      </div>
 
-    <div class="featured-card">
-      <a class="featured-card-title" href="{{ '/categories/systems/' | relative_url }}">Systems &amp; Power</a>
-      <span>Writing that asks what failed, who benefits, who is left behind, and what needs to change.</span>
+      <div class="featured-card">
+        <a class="featured-card-title" href="{{ '/categories/disability/' | relative_url }}">Disability &amp; Access</a>
+        <span>Essays about pain, mobility, healthcare, accessibility, and systems that fail disabled people.</span>
+      </div>
+
+      <div class="featured-card">
+        <a class="featured-card-title" href="{{ '/categories/systems/' | relative_url }}">Systems &amp; Power</a>
+        <span>Writing that asks what failed, who benefits, who is left behind, and what needs to change.</span>
+      </div>
     </div>
-  </div>
+  {% endif %}
 </section>
 
 <section class="latest-posts">
