@@ -2,6 +2,16 @@
 layout: default
 ---
 
+{% assign article_words = content | number_of_words %}
+{% assign read_minutes = article_words | divided_by: 200 %}
+{% assign read_remainder = article_words | modulo: 200 %}
+{% if read_remainder > 0 %}
+  {% assign read_minutes = read_minutes | plus: 1 %}
+{% endif %}
+{% if read_minutes < 1 %}
+  {% assign read_minutes = 1 %}
+{% endif %}
+
 <article class="post">
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
@@ -11,6 +21,7 @@ layout: default
       {% if page.categories %}
         · {{ page.categories | join: ", " }}
       {% endif %}
+      · {{ read_minutes }} min read
     </p>
   </header>
 
@@ -67,6 +78,41 @@ layout: default
   </div>
 
   <p class="print-source">Source: {{ page.url | absolute_url }}</p>
+
+  {% assign related_count = 0 %}
+  {% for post in site.posts %}
+    {% assign is_related = false %}
+    {% unless post.url == page.url %}
+      {% for category in post.categories %}
+        {% if page.categories contains category %}
+          {% assign is_related = true %}
+        {% endif %}
+      {% endfor %}
+    {% endunless %}
+
+    {% if is_related and related_count < 3 %}
+      {% if related_count == 0 %}
+        <section class="related-posts" aria-label="Related Field Notes">
+          <h2>Related Field Notes</h2>
+          <ul>
+      {% endif %}
+
+      <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <span>{{ post.date | date: "%B %-d, %Y" }}</span>
+        {% if post.description %}
+          <p>{{ post.description }}</p>
+        {% endif %}
+      </li>
+
+      {% assign related_count = related_count | plus: 1 %}
+    {% endif %}
+  {% endfor %}
+
+  {% if related_count > 0 %}
+        </ul>
+      </section>
+  {% endif %}
 
   <hr>
 
