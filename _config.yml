@@ -1,20 +1,33 @@
 title: Blackthorn Field Notes
-author: C. J. Blackthorn
+tagline: Systems, survival, technology, relationships, and the work of staying human.
 description: Systems, survival, technology, relationships, and the work of staying human.
+lang: en
+url: "https://cjblackthorn.github.io"
+baseurl: ""
+timezone: America/Los_Angeles
+
 theme: minima
 show_excerpts: true
 
-url: "https://cjblackthorn.github.io"
-baseurl: ""
-
-defaults:
-  - scope:
-      path: ""
-    values:
-      image: /assets/images/blackthorn-field-notes-card.PNG
+logo: /assets/images/blackthorn-field-notes-card.PNG
+image: /assets/images/blackthorn-field-notes-card.PNG
 
 author:
   name: C. J. Blackthorn
+
+social:
+  name: C. J. Blackthorn
+  links:
+    - https://cjblackthorn.github.io
+    - https://ko-fi.com/cjblackthorn
+
+webmaster_verifications:
+  google:
+  bing:
+  alexa:
+  yandex:
+  baidu:
+  facebook:
 
 plugins:
   - jekyll-feed
@@ -23,3 +36,15 @@ plugins:
 
 feed:
   posts_limit: 20
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/blackthorn-field-notes-card.PNG
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      author: C. J. Blackthorn
