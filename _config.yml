@@ -4,7 +4,7 @@ description: Systems, survival, technology, relationships, and the work of stayi
 theme: minima
 show_excerpts: true
 
-url: "https://cjblackthorn.github.io"
+url: "https://blackthornfieldnotes.ink"
 baseurl: ""
 
 defaults:
@@ -15,6 +15,12 @@ defaults:
 
 author:
   name: C. J. Blackthorn
+
+social:
+  name: C. J. Blackthorn
+  links:
+    - https://blackthornfieldnotes.ink
+    - https://ko-fi.com/cjblackthorn
 
 plugins:
   - jekyll-feed
