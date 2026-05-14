@@ -25,6 +25,16 @@ layout: default
     </p>
   </header>
 
+  {% if page.image %}
+    <figure class="post-hero">
+      <img
+        src="{{ page.image | relative_url }}"
+        alt="{{ page.title }}"
+        class="post-hero-image"
+      >
+    </figure>
+  {% endif %}
+
   {% if page.content_note %}
     <section class="content-note" aria-label="Content note">
       <strong>Content note:</strong>
@@ -143,6 +153,19 @@ layout: default
   </section>
 </article>
 
+<style>
+.post-hero {
+  margin: 1.5rem 0 2rem;
+}
+
+.post-hero-image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+}
+</style>
+
 <script>
   (function () {
     var shareButton = document.querySelector('[data-share-button]');
@@ -236,97 +259,5 @@ layout: default
     }
 
     buildTableOfContents();
-
-    if (shareButton) {
-      if (!navigator.share) {
-        shareButton.textContent = 'Copy link';
-      }
-
-      shareButton.addEventListener('click', async function () {
-        if (navigator.share) {
-          try {
-            await navigator.share({
-              title: postTitle,
-              text: postTitle,
-              url: postUrl
-            });
-          } catch (error) {
-            // User cancelled the native share sheet. No action needed.
-          }
-        } else {
-          copyPostUrl(shareButton);
-        }
-      });
-    }
-
-    if (printButton) {
-      printButton.addEventListener('click', function () {
-        stopReading();
-        window.print();
-      });
-    }
-
-    if (readButton) {
-      if (!('speechSynthesis' in window) || typeof SpeechSynthesisUtterance === 'undefined') {
-        readButton.disabled = true;
-        readButton.textContent = 'Read aloud unavailable';
-        if (pauseButton) pauseButton.disabled = true;
-        if (resumeButton) resumeButton.disabled = true;
-        if (stopButton) stopButton.disabled = true;
-        if (speedSelect) speedSelect.disabled = true;
-      } else {
-        readButton.addEventListener('click', function () {
-          stopReading();
-
-          currentUtterance = new SpeechSynthesisUtterance(getArticleText());
-          currentUtterance.rate = getReaderSpeed();
-          currentUtterance.pitch = 1;
-
-          currentUtterance.onend = function () {
-            currentUtterance = null;
-            readButton.textContent = 'Read aloud';
-          };
-
-          currentUtterance.onerror = function () {
-            currentUtterance = null;
-            readButton.textContent = 'Read aloud';
-          };
-
-          readButton.textContent = 'Reading...';
-          window.speechSynthesis.speak(currentUtterance);
-        });
-
-        if (pauseButton) {
-          pauseButton.addEventListener('click', function () {
-            if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
-              window.speechSynthesis.pause();
-            }
-          });
-        }
-
-        if (resumeButton) {
-          resumeButton.addEventListener('click', function () {
-            if (window.speechSynthesis.paused) {
-              window.speechSynthesis.resume();
-            }
-          });
-        }
-
-        if (stopButton) {
-          stopButton.addEventListener('click', stopReading);
-        }
-
-        if (speedSelect) {
-          speedSelect.addEventListener('change', function () {
-            if (window.speechSynthesis.speaking) {
-              stopReading();
-              temporarilySetText(readButton, 'Speed changed');
-            }
-          });
-        }
-
-        window.addEventListener('beforeunload', stopReading);
-      }
-    }
   })();
 </script>
