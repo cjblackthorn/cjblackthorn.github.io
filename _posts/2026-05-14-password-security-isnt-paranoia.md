@@ -5,6 +5,7 @@ date: 2026-05-14
 categories: [technology, systems]
 tags: [passwords, cybersecurity, password-managers, 2fa, mfa, privacy, online-safety]
 description: "Why password managers matter, why password sharing is dangerous, and why multi-factor authentication should be standard for everyone."
+image: /assets/images/password-security-basic-survival.PNG
 ---
 
 # Password Security Isn’t Paranoia. It’s Basic Survival.
