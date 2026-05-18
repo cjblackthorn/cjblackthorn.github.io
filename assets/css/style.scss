@@ -61,58 +61,9 @@ body {
 
 .all-posts-controls label {
   display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
-  font-weight: 600;
-}
-
-.all-posts-controls input,
-.all-posts-controls select {
-  padding: 0.7rem;
-  border-radius: 10px;
-}
-
-.all-post-item {
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border);
-}
-
-/* =========================
-   Article Reactions
-   ========================= */
-
-.article-reactions {
-  margin-top: 2.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border);
-}
-
-.reaction-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1rem;
-}
-
-.reaction-button {
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: 0.7rem 1rem;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: transparent;
-  color: var(--text);
-  font-weight: 600;
-  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-}
-
-.reaction-button:hover {
-  border-color: var(--accent);
-  transform: translateY(-1px);
-}
-
-.reaction-selected {
-  background: rgba(143, 29, 44, 0.14);
-  border-color: var(--accent);
+  gap: 0.35rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
