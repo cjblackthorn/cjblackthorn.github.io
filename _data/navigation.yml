@@ -31,8 +31,6 @@
 
 - title: Categories
   children:
-    - title: All
-      url: /all/
     - title: Advocacy
       url: /categories/advocacy/
     - title: Disability
