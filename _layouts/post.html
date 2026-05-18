@@ -53,17 +53,6 @@ layout: default
     {{ content }}
   </div>
 
-  <section class="article-reactions" aria-label="Article reactions">
-    <p><strong>Did this article resonate with you?</strong></p>
-
-    <div class="reaction-buttons">
-      <button class="reaction-button" data-reaction="Resonated">Resonated</button>
-      <button class="reaction-button" data-reaction="Thought-Provoking">Thought-Provoking</button>
-      <button class="reaction-button" data-reaction="Helpful">Helpful</button>
-      <button class="reaction-button" data-reaction="Important Read">Important Read</button>
-    </div>
-  </section>
-
   <p class="print-source">Source: {{ page.url | absolute_url }}</p>
 
   <hr>
@@ -96,31 +85,40 @@ layout: default
 </article>
 
 <script>
-(function () {
-  const pageKey = 'reactions:' + window.location.pathname;
-  const buttons = document.querySelectorAll('.reaction-button');
+document.addEventListener('DOMContentLoaded', function () {
+  const shareButton = document.querySelector('[data-share-button]');
+  const printButton = document.querySelector('[data-print-button]');
 
-  if (!buttons.length) return;
+  if (shareButton) {
+    shareButton.addEventListener('click', async function () {
+      const shareData = {
+        title: document.title,
+        url: window.location.href
+      };
 
-  const saved = localStorage.getItem(pageKey);
+      try {
+        if (navigator.share) {
+          await navigator.share(shareData);
+        } else if (navigator.clipboard) {
+          await navigator.clipboard.writeText(window.location.href);
 
-  if (saved) {
-    buttons.forEach(button => {
-      if (button.dataset.reaction === saved) {
-        button.classList.add('reaction-selected');
+          const original = shareButton.textContent;
+          shareButton.textContent = 'Link copied';
+
+          setTimeout(() => {
+            shareButton.textContent = original;
+          }, 2000);
+        }
+      } catch (err) {
+        console.error(err);
       }
     });
   }
 
-  buttons.forEach(button => {
-    button.addEventListener('click', function () {
-      const reaction = button.dataset.reaction;
-
-      localStorage.setItem(pageKey, reaction);
-
-      buttons.forEach(btn => btn.classList.remove('reaction-selected'));
-      button.classList.add('reaction-selected');
+  if (printButton) {
+    printButton.addEventListener('click', function () {
+      window.print();
     });
-  });
-})();
+  }
+});
 </script>
