@@ -1,0 +1,14 @@
+/* Mobile navigation overflow fix */
+.site-menu-list {
+    overflow-y: auto;
+    max-height: calc(100vh - 120px);
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Support button vertical centering */
+.support-button,
+.small-support-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
