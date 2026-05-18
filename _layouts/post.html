@@ -49,80 +49,22 @@ layout: default
     </section>
   {% endif %}
 
-  <section class="article-reader" aria-label="Read article aloud">
-    <span class="article-reader-label">Listen to this article:</span>
-
-    <button class="reader-button" type="button" data-read-article>
-      Read aloud
-    </button>
-
-    <button class="reader-button" type="button" data-pause-article>
-      Pause
-    </button>
-
-    <button class="reader-button" type="button" data-resume-article>
-      Resume
-    </button>
-
-    <button class="reader-button" type="button" data-stop-article>
-      Stop
-    </button>
-
-    <label class="reader-speed-label">
-      Speed
-      <select class="reader-speed-select" data-reader-speed>
-        <option value="0.8">Slower</option>
-        <option value="0.95" selected>Normal</option>
-        <option value="1.15">Faster</option>
-      </select>
-    </label>
-  </section>
-
-  <nav class="article-toc" aria-label="On this page" hidden>
-    <h2>On this page</h2>
-    <ol data-article-toc-list></ol>
-  </nav>
-
   <div class="post-content">
     {{ content }}
   </div>
 
+  <section class="article-reactions" aria-label="Article reactions">
+    <p><strong>Did this article resonate with you?</strong></p>
+
+    <div class="reaction-buttons">
+      <button class="reaction-button" data-reaction="Resonated">Resonated</button>
+      <button class="reaction-button" data-reaction="Thought-Provoking">Thought-Provoking</button>
+      <button class="reaction-button" data-reaction="Helpful">Helpful</button>
+      <button class="reaction-button" data-reaction="Important Read">Important Read</button>
+    </div>
+  </section>
+
   <p class="print-source">Source: {{ page.url | absolute_url }}</p>
-
-  {% assign related_count = 0 %}
-  {% for post in site.posts %}
-    {% assign is_related = false %}
-    {% unless post.url == page.url %}
-      {% for category in post.categories %}
-        {% if page.categories contains category %}
-          {% assign is_related = true %}
-        {% endif %}
-      {% endfor %}
-    {% endunless %}
-
-    {% if is_related and related_count < 3 %}
-      {% if related_count == 0 %}
-        <section class="related-posts" aria-label="Related Field Notes">
-          <h2>Related Field Notes</h2>
-          <ul>
-      {% endif %}
-
-      <li>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        <span>{{ post.date | date: "%B %-d, %Y" }}</span>
-        {% if post.description %}
-          <p>{{ post.description }}</p>
-        {% endif %}
-      </li>
-
-      {% assign related_count = related_count | plus: 1 %}
-    {% endif %}
-  {% endfor %}
-
-  {% if related_count > 0 %}
-        </ul>
-      </section>
-  {% endif %}
 
   <hr>
 
@@ -153,111 +95,32 @@ layout: default
   </section>
 </article>
 
-<style>
-.post-hero {
-  margin: 1.5rem 0 2rem;
-}
-
-.post-hero-image {
-  width: 100%;
-  height: auto;
-  border-radius: 16px;
-  display: block;
-}
-</style>
-
 <script>
-  (function () {
-    var shareButton = document.querySelector('[data-share-button]');
-    var printButton = document.querySelector('[data-print-button]');
-    var readButton = document.querySelector('[data-read-article]');
-    var pauseButton = document.querySelector('[data-pause-article]');
-    var resumeButton = document.querySelector('[data-resume-article]');
-    var stopButton = document.querySelector('[data-stop-article]');
-    var speedSelect = document.querySelector('[data-reader-speed]');
-    var postTitle = {{ page.title | jsonify }};
-    var postUrl = {{ page.url | absolute_url | jsonify }};
-    var currentUtterance = null;
+(function () {
+  const pageKey = 'reactions:' + window.location.pathname;
+  const buttons = document.querySelectorAll('.reaction-button');
 
-    function temporarilySetText(button, text) {
-      var originalText = button.textContent;
-      button.textContent = text;
-      window.setTimeout(function () {
-        button.textContent = originalText;
-      }, 2000);
-    }
+  if (!buttons.length) return;
 
-    async function copyPostUrl(button) {
-      try {
-        if (navigator.clipboard && window.isSecureContext) {
-          await navigator.clipboard.writeText(postUrl);
-        } else {
-          var textArea = document.createElement('textarea');
-          textArea.value = postUrl;
-          textArea.setAttribute('readonly', '');
-          textArea.style.position = 'absolute';
-          textArea.style.left = '-9999px';
-          document.body.appendChild(textArea);
-          textArea.select();
-          document.execCommand('copy');
-          document.body.removeChild(textArea);
-        }
+  const saved = localStorage.getItem(pageKey);
 
-        temporarilySetText(button, 'Link copied');
-      } catch (error) {
-        temporarilySetText(button, 'Copy failed');
+  if (saved) {
+    buttons.forEach(button => {
+      if (button.dataset.reaction === saved) {
+        button.classList.add('reaction-selected');
       }
-    }
+    });
+  }
 
-    function getArticleText() {
-      var content = document.querySelector('.post-content');
-      var note = document.querySelector('.content-note');
-      var summary = document.querySelector('.plain-summary');
-      var parts = [postTitle];
+  buttons.forEach(button => {
+    button.addEventListener('click', function () {
+      const reaction = button.dataset.reaction;
 
-      if (note) parts.push(note.innerText);
-      if (summary) parts.push(summary.innerText);
-      if (content) parts.push(content.innerText);
+      localStorage.setItem(pageKey, reaction);
 
-      return parts.join('. ');
-    }
-
-    function getReaderSpeed() {
-      if (!speedSelect) return 0.95;
-      return Number(speedSelect.value) || 0.95;
-    }
-
-    function stopReading() {
-      if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-      }
-      currentUtterance = null;
-      if (readButton) readButton.textContent = 'Read aloud';
-    }
-
-    function buildTableOfContents() {
-      var toc = document.querySelector('.article-toc');
-      var list = document.querySelector('[data-article-toc-list]');
-      var headings = Array.prototype.slice.call(document.querySelectorAll('.post-content h2'));
-
-      if (!toc || !list || headings.length < 2) return;
-
-      headings.forEach(function (heading, index) {
-        if (!heading.id) {
-          heading.id = 'section-' + (index + 1);
-        }
-
-        var item = document.createElement('li');
-        var link = document.createElement('a');
-        link.href = '#' + heading.id;
-        link.textContent = heading.textContent;
-        item.appendChild(link);
-        list.appendChild(item);
-      });
-
-      toc.hidden = false;
-    }
-
-    buildTableOfContents();
-  })();
+      buttons.forEach(btn => btn.classList.remove('reaction-selected'));
+      button.classList.add('reaction-selected');
+    });
+  });
+})();
 </script>

@@ -20,7 +20,6 @@
   --code-bg: #f0ebe4;
 }
 
-/* Dark mode follows the visitor's system setting */
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #0f0f12;
@@ -49,146 +48,18 @@ body {
   max-width: 860px;
 }
 
-.site-header,
-.site-footer {
-  background: var(--header-bg);
-  border-color: var(--border);
-}
+/* =========================
+   Archive / Discovery
+   ========================= */
 
-.site-title,
-.site-title:visited,
-.site-nav .page-link {
-  color: var(--text);
-}
-
-.site-title:hover,
-.site-nav .page-link:hover {
-  color: var(--link-hover);
-  text-decoration: none;
-}
-
-.page-content,
-.post,
-.page,
-article {
-  background: var(--bg);
-}
-
-p,
-li {
-  color: var(--text);
-}
-
-a,
-a:visited {
-  color: var(--link);
-}
-
-a:hover {
-  color: var(--link-hover);
-}
-
-.post-title,
-.post-content h1,
-.post-content h2,
-.post-content h3,
-.post-content h4,
-.page-heading {
-  color: var(--text);
-}
-
-.post-meta {
-  color: var(--muted);
-  font-size: 0.9rem;
-  opacity: 0.85;
-}
-
-blockquote {
-  color: var(--muted);
-  border-left: 4px solid var(--accent);
-  background: var(--bg-soft);
-  padding: 0.8rem 1rem;
-}
-
-hr {
-  border: 0;
-  border-top: 1px solid var(--border);
+.all-posts-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
   margin: 2rem 0;
 }
 
-pre,
-code {
-  background: var(--code-bg);
-  color: var(--text);
-  border: 1px solid var(--border);
-}
-
-input,
-textarea,
-button {
-  background: var(--bg-soft);
-  color: var(--text);
-  border: 1px solid var(--border);
-}
-
-button {
-  cursor: pointer;
-  padding: 0.5rem 0.8rem;
-}
-
-button:hover {
-  border-color: var(--link);
-}
-
-/* =========================
-   Blackthorn Field Notes Menu
-   ========================= */
-
-.site-menu {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: var(--header-bg);
-  border-bottom: 1px solid var(--border);
-}
-
-.site-menu-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0.75rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.site-menu-brand {
-  font-weight: 700;
-  text-decoration: none;
-  font-size: 1.05rem;
-  letter-spacing: 0.02em;
-  color: var(--text);
-}
-
-.site-menu-toggle {
-  display: none;
-}
-
-.site-menu-button {
-  display: none;
-  cursor: pointer;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 0.45rem 0.75rem;
-  font-size: 0.95rem;
-  color: var(--text);
-}
-
-.site-menu-icon {
-  margin-right: 0.25rem;
-}
-
-.site-menu-list {
+.all-posts-controls label {
   display: flex;
   align-items: center;
   gap: 0.35rem;
