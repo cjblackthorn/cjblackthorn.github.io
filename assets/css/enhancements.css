@@ -13,15 +13,53 @@
     justify-content: center;
 }
 
-/* Compass logo branding */
+/* Unified navigation branding */
 .site-logo-link {
     display: inline-flex;
     align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
 }
 
 .site-logo-image {
-    width: 58px;
-    height: 58px;
+    width: 42px;
+    height: 42px;
     object-fit: contain;
     display: block;
+}
+
+.site-menu-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 700;
+}
+
+/* Accessibility controls */
+.display-tools {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.85rem 1rem;
+    background: rgba(16, 16, 22, 0.96);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.display-tool-button {
+    appearance: none;
+    background: rgba(34, 34, 44, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: #f5f5f5;
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+    font-weight: 600;
+    line-height: 1;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.display-tool-button:hover,
+.display-tool-button:focus-visible {
+    border-color: rgba(215, 110, 125, 0.85);
+    background: rgba(48, 48, 62, 1);
+    outline: none;
 }
