@@ -23,13 +23,21 @@
 
     {% include site-nav.html %}
 
-    <section class="display-tools" aria-label="Display options">
+    <section class="display-tools" aria-label="Display and reading options">
       <button class="display-tool-button" type="button" data-large-text-toggle aria-pressed="false">
         Larger text
       </button>
 
       <button class="display-tool-button" type="button" data-high-contrast-toggle aria-pressed="false">
         High contrast
+      </button>
+
+      <button class="display-tool-button" type="button" data-read-page>
+        Read aloud
+      </button>
+
+      <button class="display-tool-button" type="button" data-stop-reading>
+        Stop reading
       </button>
     </section>
 
@@ -102,6 +110,8 @@
       (function () {
         var largeTextButton = document.querySelector('[data-large-text-toggle]');
         var highContrastButton = document.querySelector('[data-high-contrast-toggle]');
+        var readButton = document.querySelector('[data-read-page]');
+        var stopReadingButton = document.querySelector('[data-stop-reading]');
 
         function getPreference(key) {
           try {
@@ -146,6 +156,37 @@
             setPreference('blackthorn-high-contrast', highContrastEnabled);
             applyPreference('high-contrast', highContrastEnabled);
           });
+        }
+
+        function getReadableText() {
+          var content = document.querySelector('.post-content') || document.querySelector('#main-content');
+          return content ? content.innerText.replace(/\s+/g, ' ').trim() : '';
+        }
+
+        if (readButton && 'speechSynthesis' in window) {
+          readButton.addEventListener('click', function () {
+            var text = getReadableText();
+            if (!text) {
+              return;
+            }
+
+            window.speechSynthesis.cancel();
+
+            var utterance = new SpeechSynthesisUtterance(text);
+            utterance.rate = 0.95;
+            utterance.pitch = 1;
+            window.speechSynthesis.speak(utterance);
+          });
+        } else if (readButton) {
+          readButton.hidden = true;
+        }
+
+        if (stopReadingButton && 'speechSynthesis' in window) {
+          stopReadingButton.addEventListener('click', function () {
+            window.speechSynthesis.cancel();
+          });
+        } else if (stopReadingButton) {
+          stopReadingButton.hidden = true;
         }
       })();
     </script>
