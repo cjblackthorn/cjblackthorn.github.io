@@ -12,8 +12,6 @@ image: /assets/images/blackthorn-field-notes-card.PNG
     class="home-hero-image"
   >
 
-  <h1>Blackthorn Field Notes</h1>
-
   <p class="tagline">
     Systems, survival, technology, relationships, and the work of staying human.
   </p>
