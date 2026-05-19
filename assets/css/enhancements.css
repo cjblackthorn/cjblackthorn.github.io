@@ -17,12 +17,13 @@
 .site-logo-link {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
+    gap: 0.75rem;
+    text-decoration: none;
 }
 
 .site-logo-image {
-    width: 58px;
-    height: 58px;
+    width: 42px;
+    height: 42px;
     object-fit: contain;
     display: block;
 }
