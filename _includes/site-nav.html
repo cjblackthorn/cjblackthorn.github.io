@@ -1,7 +1,12 @@
 <nav class="site-menu" aria-label="Main navigation">
   <div class="site-menu-inner">
-    <a class="site-menu-brand" href="{{ '/' | relative_url }}">
-      Blackthorn Field Notes
+    <a class="site-menu-brand site-logo-link" href="{{ '/' | relative_url }}" aria-label="Blackthorn Field Notes home">
+      <img
+        src="{{ '/assets/images/blackthorn-compass-logo-number-4-crop.png' | relative_url }}"
+        alt=""
+        class="site-logo-image"
+      >
+      <span>Blackthorn Field Notes</span>
     </a>
 
     <input type="checkbox" id="site-menu-toggle" class="site-menu-toggle" aria-label="Toggle navigation menu">
