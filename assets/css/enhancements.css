@@ -12,3 +12,16 @@
     align-items: center;
     justify-content: center;
 }
+
+/* Compass logo branding */
+.site-logo-link {
+    display: inline-flex;
+    align-items: center;
+}
+
+.site-logo-image {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+    display: block;
+}
