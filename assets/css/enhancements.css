@@ -48,3 +48,15 @@
 .display-tool-button:hover {
     border-color: rgba(215, 110, 125, 0.75);
 }
+/* Compass logo branding */
+.site-logo-link {
+    display: inline-flex;
+    align-items: center;
+}
+
+.site-logo-image {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+    display: block;
+}
