@@ -372,6 +372,31 @@ button:hover {
   margin-bottom: 2rem;
 }
 
+.home-search,
+.featured-posts,
+.latest-posts,
+.category-links,
+.subscribe-callout {
+  margin-bottom: 3rem;
+}
+
+.featured-posts {
+  padding-bottom: 0.75rem;
+}
+
+.latest-posts {
+  margin-top: 2.5rem;
+}
+
+.home-search h2,
+.featured-posts h2,
+.latest-posts h2,
+.category-links h2,
+.subscribe-callout h2 {
+  margin-bottom: 0.9rem;
+  line-height: 1.2;
+}
+
 .home-hero-image {
   width: 100%;
   max-height: 360px;
@@ -418,6 +443,25 @@ button:hover {
   font-size: 0.85rem;
   opacity: 0.7;
   margin-top: 0.25rem;
+}
+
+@media (max-width: 640px) {
+  .home-hero,
+  .home-search,
+  .featured-posts,
+  .latest-posts,
+  .category-links,
+  .subscribe-callout {
+    margin-bottom: 2.5rem;
+  }
+
+  .featured-posts {
+    padding-bottom: 1rem;
+  }
+
+  .latest-posts {
+    margin-top: 2.75rem;
+  }
 }
 
 /* =========================
