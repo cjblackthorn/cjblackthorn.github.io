@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
     results.innerHTML = "";
 
     if (query.length < 2) {
-      results.innerHTML = "<li class='post-meta'>Search by topic, category, or keyword.</li>";
       return;
     }
 
