@@ -17,37 +17,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
   input.addEventListener("input", function () {
     const query = input.value.toLowerCase().trim();
-
     results.innerHTML = "";
 
-    if (query.length < 2) return;
+    if (query.length < 2) {
+      results.innerHTML = "<li class='post-meta'>Search by topic, category, or keyword.</li>";
+      return;
+    }
 
     const matches = posts.filter(post => {
-      const searchableText = `
-        ${post.title}
-        ${post.description}
-        ${post.categories}
-        ${post.tags}
-        ${post.content}
-      `.toLowerCase();
-
+      const searchableText = `${post.title} ${post.description} ${post.categories} ${post.tags} ${post.content}`.toLowerCase();
       return searchableText.includes(query);
-    }).slice(0, 10);
+    }).slice(0,10);
 
     if (matches.length === 0) {
-      results.innerHTML = "<li>No matching field notes found.</li>";
+      results.innerHTML = "<li class='search-empty'><strong>No Field Notes found.</strong><p>Try another topic or keyword.</p></li>";
       return;
     }
 
     matches.forEach(post => {
       const li = document.createElement("li");
-
-      li.innerHTML = `
-        <a href="${post.url}">${post.title}</a>
-        <p class="post-meta">${post.date} · ${post.categories}</p>
-        <p>${post.description || ""}</p>
-      `;
-
+      li.innerHTML = `<h3><a href='${post.url}'>${post.title}</a></h3><p class='post-meta'>${post.date} · ${post.categories}</p><p>${post.description || ""}</p>`;
       results.appendChild(li);
     });
   });
