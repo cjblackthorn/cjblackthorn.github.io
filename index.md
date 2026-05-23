@@ -35,6 +35,7 @@ image: /assets/images/blackthorn-field-notes-card.PNG
 
 <section class="home-search">
   <h2>Search the Field Notes</h2>
+  <p class="search-helper">Search by topic, category, or keyword.</p>
   <input
     type="text"
     id="search-input"
