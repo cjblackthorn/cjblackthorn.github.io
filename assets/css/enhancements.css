@@ -58,3 +58,8 @@
     color: #ffffff;
     outline: none;
 }
+
+/* Search spacing */
+.home-search input {margin-bottom:.75rem;}
+#search-results {margin-top:.75rem;list-style:none;padding-left:0;}
+#search-results li {margin-bottom:1rem;} 
