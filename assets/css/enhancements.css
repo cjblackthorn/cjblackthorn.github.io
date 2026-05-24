@@ -31,3 +31,8 @@
 .featured-posts {margin-bottom:3.5rem;}
 .latest-posts {margin-top:1rem;}
 .latest-posts h2 {margin-top:0;}
+
+/* Category page hierarchy */
+.post-list h2 {margin-bottom:.35rem;line-height:1.25;}
+.post-list .post-meta {margin-bottom:.65rem;}
+.post-list li {padding-bottom:1.75rem;margin-bottom:1.75rem;}
