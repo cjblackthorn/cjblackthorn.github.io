@@ -6,7 +6,6 @@ url: "https://blackthornfieldnotes.ink"
 baseurl: ""
 timezone: America/Los_Angeles
 
-theme: minima
 show_excerpts: true
 
 logo: /assets/images/blackthorn-field-notes-card.PNG

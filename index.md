@@ -41,8 +41,9 @@ image: /assets/images/blackthorn-field-notes-card.PNG
     id="search-input"
     placeholder="Search articles..."
     aria-label="Search articles"
+    aria-controls="search-results"
   >
-  <ul id="search-results"></ul>
+  <ul id="search-results" aria-live="polite" aria-label="Search results"></ul>
 </section>
 
 {% assign featured_posts = site.posts | where: 'featured', true | sort: 'featured_order' %}
