@@ -11,15 +11,23 @@
 .site-logo-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
+  justify-content: center;
+  justify-self: start;
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  overflow: hidden;
   text-decoration: none;
 }
 
 .site-logo-image {
   display: block;
-  width: 42px;
-  height: 42px;
+  width: 58px;
+  height: 58px;
+  max-width: none;
   object-fit: contain;
+  transform: scale(1.18);
+  transform-origin: center;
 }
 
 .support-button,
