@@ -20,17 +20,13 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
-          bundler-cache: false
-
-      - name: Install Jekyll and link checker
-        run: |
-          gem install jekyll bundler jekyll-feed jekyll-seo-tag jekyll-sitemap minima html-proofer
+          bundler-cache: true
 
       - name: Build site
-        run: jekyll build
+        run: bundle exec jekyll build
 
       - name: Check internal links
         run: |
-          htmlproofer ./_site \
+          bundle exec htmlproofer ./_site \
             --disable-external \
             --allow-hash-href

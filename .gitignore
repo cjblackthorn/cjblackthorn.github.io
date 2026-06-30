@@ -7,7 +7,6 @@ _site/
 # Bundler / Ruby
 .bundle/
 vendor/
-Gemfile.lock
 
 # Environment / secrets
 .env

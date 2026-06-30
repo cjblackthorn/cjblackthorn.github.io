@@ -1,8 +1,6 @@
 ---
 ---
 
-@import "minima";
-
 /* =========================
    Blackthorn Field Notes Theme
    ========================= */
@@ -37,22 +35,96 @@
 }
 
 html {
+  box-sizing: border-box;
   color-scheme: light dark;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 body {
+  min-width: 320px;
+  margin: 0;
   background: var(--bg);
   color: var(--text);
+  font: 400 1rem/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+main {
+  display: block;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
 }
 
 .wrapper {
   max-width: 860px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.page-content {
+  padding: 2rem 0;
+}
+
+.site-footer {
+  padding: 2rem 0;
 }
 
 .site-header,
 .site-footer {
   background: var(--header-bg);
   border-color: var(--border);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
+
+p,
+blockquote,
+pre,
+ul,
+ol,
+dl,
+figure,
+table {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+ul,
+ol {
+  padding-left: 1.5rem;
+}
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.14em;
 }
 
 .site-title,
@@ -104,6 +176,7 @@ a:hover {
 }
 
 blockquote {
+  margin-left: 0;
   color: var(--muted);
   border-left: 4px solid var(--accent);
   background: var(--bg-soft);
@@ -121,6 +194,44 @@ code {
   background: var(--code-bg);
   color: var(--text);
   border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+pre {
+  overflow-x: auto;
+  padding: 0.8rem 1rem;
+}
+
+code {
+  padding: 0.1rem 0.25rem;
+}
+
+pre code {
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+}
+
+input,
+textarea,
+button,
+select {
+  max-width: 100%;
+  font: inherit;
 }
 
 input,

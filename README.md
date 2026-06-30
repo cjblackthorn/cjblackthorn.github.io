@@ -50,3 +50,11 @@ Do not commit API keys, tokens, private keys, Stripe secret keys, OAuth secrets,
 ## Build Check
 
 A GitHub Actions workflow checks that the Jekyll site builds successfully on pushes and pull requests to `main`.
+
+To check the site locally with the Homebrew Ruby 3.2 toolchain:
+
+```text
+/opt/homebrew/opt/ruby@3.2/bin/bundle install
+/opt/homebrew/opt/ruby@3.2/bin/bundle exec jekyll build
+/opt/homebrew/opt/ruby@3.2/bin/bundle exec htmlproofer ./_site --disable-external --allow-hash-href
+```
