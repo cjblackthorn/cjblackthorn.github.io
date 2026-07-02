@@ -7,8 +7,6 @@ tags: [ai, automation, cybersecurity, governance, grc, ethics, accountability]
 description: "AI is powerful, fast, and increasingly capable, but capability is not readiness. Businesses rushing to replace human judgment with automation may be creating systems they no longer fully understand, govern, or control."
 ---
 
-# Just Because AI Can Doesn’t Mean It Should
-
 Artificial intelligence has rapidly become the newest obsession in business. Every company wants to integrate it. Every executive wants to leverage it. Every investor wants to hear about it during earnings calls. AI promises speed, efficiency, scalability, consistency, automation, and lower operational costs.
 
 I understand the appeal.
