@@ -5,8 +5,6 @@ permalink: /categories/personal-essays/
 description: Personal essays from Blackthorn Field Notes.
 ---
 
-# Personal Essays
-
 Personal essays and reflections about lived experience, meaning, survival, identity, and the private realities behind public systems.
 
 <ul class="post-list">

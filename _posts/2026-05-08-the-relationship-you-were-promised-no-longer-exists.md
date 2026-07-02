@@ -7,8 +7,6 @@ tags: [relationships, equality, patriarchy, emotional-labor, partnership, autono
 description: "Modern relationships are changing because women are no longer trapped by dependence. Equality did not ruin relationships. It changed what healthy partnership requires."
 ---
 
-# The Relationship You Were Promised No Longer Exists
-
 The relationship many men were raised to expect no longer exists, and a lot of men are struggling with that.
 
 Not because women became impossible. Not because love became meaningless. Not because modern relationships are broken beyond repair. The problem is simpler than that: the old model depended on women having fewer choices.

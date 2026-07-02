@@ -6,6 +6,8 @@ image: /assets/images/blackthorn-field-notes-card.PNG
 ---
 
 <section class="home-hero">
+  <h1 class="visually-hidden">Blackthorn Field Notes</h1>
+
   <img
     src="/assets/images/blackthorn-field-notes-card.PNG"
     alt="Blackthorn Field Notes banner"

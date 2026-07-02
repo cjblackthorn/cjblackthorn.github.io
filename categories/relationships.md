@@ -5,8 +5,6 @@ permalink: /categories/relationships/
 description: Relationship essays and field notes from Blackthorn Field Notes.
 ---
 
-# Relationships
-
 Essays and field notes about connection, accountability, communication, conflict, repair, care, and what people owe each other.
 
 <ul class="post-list">

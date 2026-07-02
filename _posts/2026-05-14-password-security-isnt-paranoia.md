@@ -8,8 +8,6 @@ description: "Why password managers matter, why password sharing is dangerous, a
 image: /assets/images/password-security-basic-survival.PNG
 ---
 
-# Password Security Isn’t Paranoia. It’s Basic Survival.
-
 Most people imagine hacking as something cinematic.
 
 A genius in a dark room. Multiple monitors glowing neon green. Someone rapidly typing through layers of encryption while alarms flash across a corporate network. Popular culture trained people to imagine cybersecurity breaches as highly targeted attacks carried out by exceptionally skilled individuals against specific victims.
@@ -38,7 +36,7 @@ Your passwords are no longer protecting “just” online accounts.
 
 They are protecting your identity, your finances, your healthcare access, your private conversations, your memories, your work, and increasingly, your ability to participate safely in everyday life.
 
-# The Myth of “Getting Hacked”
+## The Myth of “Getting Hacked”
 
 The phrase “I got hacked” makes it sound personal.
 
@@ -70,7 +68,7 @@ That is the real myth of “getting hacked”: the idea that it always begins wi
 
 Sometimes, they are just trying every leaked key until one of them opens a door.
 
-# Why Password Reuse Becomes Catastrophic
+## Why Password Reuse Becomes Catastrophic
 
 Most people do not reuse passwords because they are irresponsible.
 
@@ -122,7 +120,7 @@ That is why password reuse is no longer just a minor bad habit or a lazy shortcu
 
 And the worst part is that most people do not realize how exposed they are until after the collapse has already started.
 
-# Security Fatigue and Human Exhaustion
+## Security Fatigue and Human Exhaustion
 
 One of the biggest problems in modern cybersecurity has very little to do with technology itself.
 
@@ -168,7 +166,7 @@ Because exhaustion is no longer the exception.
 
 For many people, it is the default state.
 
-# Password Managers: Why Humans Are Bad at Passwords
+## Password Managers: Why Humans Are Bad at Passwords
 
 At this point, most cybersecurity advice usually turns into scolding.
 
@@ -218,7 +216,7 @@ It is about reducing risk, limiting damage, and making attackers move on to easi
 
 Unfortunately, there are still plenty of easier targets.
 
-# Multi-Factor Authentication Should Already Be Standard
+## Multi-Factor Authentication Should Already Be Standard
 
 Passwords alone are no longer enough.
 
@@ -266,7 +264,7 @@ And in a digital world where passwords are constantly leaking somewhere, that ex
 
 It is basic survival for everyone else too.
 
-# The Truth About Password Sharing
+## The Truth About Password Sharing
 
 Password sharing has become strangely normalized.
 
@@ -310,7 +308,7 @@ Because once access is normalized, boundaries become much harder to rebuild late
 
 And in the modern world, digital boundaries are still boundaries.
 
-# What People Should Actually Do
+## What People Should Actually Do
 
 At some point, cybersecurity advice becomes so overwhelming that people stop engaging with it entirely.
 
@@ -358,7 +356,7 @@ Perfect security does not exist.
 
 But reasonable security is still incredibly powerful.
 
-# Closing Reflection
+## Closing Reflection
 
 Password security is not paranoia.
 

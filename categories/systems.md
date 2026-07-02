@@ -5,8 +5,6 @@ permalink: /categories/systems/
 description: Systems essays and field notes from Blackthorn Field Notes.
 ---
 
-# Systems
-
 Essays and field notes about institutions, incentives, bureaucracy, policy, power, and the structures that shape people’s lives.
 
 <ul class="post-list">

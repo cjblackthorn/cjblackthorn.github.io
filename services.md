@@ -7,8 +7,6 @@ image: /assets/images/blackthorn-field-notes-card.PNG
 plain_summary: "This page explains limited coaching and professional inquiry options, including boundaries, availability, and what these services are not."
 ---
 
-# Services
-
 Blackthorn Field Notes is primarily a public writing and publishing space. I also occasionally consider limited relationship and life coaching, collaboration, writing, accessibility, technology, and systems-related work on a case-by-case basis.
 
 Availability is limited. Any work that requires my time, attention, planning, review, consultation, or emotional labor depends on my capacity, schedule, and whether the request is a good fit.

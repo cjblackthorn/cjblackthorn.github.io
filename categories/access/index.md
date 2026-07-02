@@ -5,8 +5,6 @@ permalink: /categories/access/
 description: Access essays and field notes from Blackthorn Field Notes.
 ---
 
-# Access
-
 Access essays now live with the Accessibility category.
 
 <p><a href="{{ '/categories/accessibility/' | relative_url }}">Browse Accessibility &rarr;</a></p>

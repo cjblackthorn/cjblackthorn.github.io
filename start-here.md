@@ -6,8 +6,6 @@ description: A guided starting point for Blackthorn Field Notes by C. J. Blackth
 image: /assets/images/blackthorn-field-notes-card.PNG
 ---
 
-# Start Here
-
 Blackthorn Field Notes is a place for essays about systems, survival, technology, relationships, disability, access, boundaries, and the work of staying human.
 
 If you are new here, you do not have to read everything in order. Start with the doorway that sounds closest to what brought you here.

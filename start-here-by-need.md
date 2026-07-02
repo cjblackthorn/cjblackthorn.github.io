@@ -7,8 +7,6 @@ image: /assets/images/blackthorn-field-notes-card.PNG
 plain_summary: "This page helps readers find essays by need, including disability, relationships, systems, survival, technology, services, and support."
 ---
 
-# Start Here by Need
-
 Not everyone arrives here looking for the same thing.
 
 Some people come here because they are disabled and tired of being treated like access is a favor. Some come because they are trying to understand a relationship pattern that keeps hurting them. Some are looking for language for systems that failed them. Some are looking for technology, power, survival, boundaries, or a reminder that they are not the only person trying to stay human inside impossible conditions.

@@ -5,8 +5,6 @@ permalink: /categories/advocacy/
 description: Advocacy essays and field notes from Blackthorn Field Notes.
 ---
 
-# Advocacy
-
 Essays and field notes about speaking truth, challenging systems, and pushing for change.
 
 <ul class="post-list">
