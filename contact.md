@@ -7,8 +7,6 @@ image: /assets/images/blackthorn-field-notes-card.PNG
 plain_summary: "This page explains how to contact C. J. Blackthorn while respecting availability, boundaries, and the limits of public contact."
 ---
 
-# Contact C. J. Blackthorn
-
 Thank you for reading Blackthorn Field Notes.
 
 I welcome thoughtful reader notes, professional inquiries, accessibility feedback, site or security concerns, publishing-related messages, and limited relationship or life coaching inquiries. I read what I can, but I cannot promise a personal reply to every message.
