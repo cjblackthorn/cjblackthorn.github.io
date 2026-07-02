@@ -7,8 +7,6 @@ image: /assets/images/blackthorn-field-notes-card.PNG
 plain_summary: "This page explains the accessibility features available on Blackthorn Field Notes and how readers can report accessibility problems."
 ---
 
-# Accessibility
-
 Blackthorn Field Notes is built around the belief that people should not have to fight the interface to access the words.
 
 This site is a work in progress, but accessibility is part of the publishing system, not an afterthought. The goal is to make essays easier to read, listen to, navigate, print, and share across different bodies, brains, devices, and energy levels.
