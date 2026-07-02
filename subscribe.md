@@ -6,8 +6,6 @@ description: Subscribe to Blackthorn Field Notes for new essays on systems, surv
 image: /assets/images/blackthorn-field-notes-card.png
 ---
 
-# Subscribe to Blackthorn Field Notes
-
 Get new essays and field notes on systems, survival, technology, relationships, disability, access, advocacy, boundaries, and the work of staying human.
 
 ## Email Updates
