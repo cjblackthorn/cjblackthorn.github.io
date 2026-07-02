@@ -5,8 +5,6 @@ permalink: /categories/boundaries/
 description: Boundary essays and field notes from Blackthorn Field Notes.
 ---
 
-# Boundaries
-
 Essays and field notes about self-respect, limits, emotional safety, accountability, and refusing to disappear inside someone else’s comfort.
 
 <ul class="post-list">
