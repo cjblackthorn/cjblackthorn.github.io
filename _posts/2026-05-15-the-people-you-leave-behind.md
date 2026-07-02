@@ -8,8 +8,6 @@ description: "An essay on LGBTQ+ solidarity, historical memory, and the growing 
 image: /assets/images/worn-pride-flag.PNG
 ---
 
-# The People You Leave Behind
-
 There is a phrase spreading online right now:
 
 “LGB without TQ.”
