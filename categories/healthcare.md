@@ -5,8 +5,6 @@ permalink: /categories/healthcare/
 description: Healthcare essays and field notes from Blackthorn Field Notes.
 ---
 
-# Healthcare
-
 Essays and field notes about medical systems, insurance barriers, care delays, access failures, and the human cost of being treated like paperwork.
 
 <ul class="post-list">
