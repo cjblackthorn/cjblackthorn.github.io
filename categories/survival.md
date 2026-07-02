@@ -5,8 +5,6 @@ permalink: /categories/survival/
 description: Survival essays and field notes from Blackthorn Field Notes.
 ---
 
-# Survival
-
 Essays and field notes about endurance, grief, trauma, adaptation, hope, and the hard work of staying human after life has tried to take that away.
 
 <ul class="post-list">
