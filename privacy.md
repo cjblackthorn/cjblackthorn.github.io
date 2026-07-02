@@ -6,8 +6,6 @@ permalink: /privacy/
 image: /assets/images/blackthorn-field-notes-card.PNG
 ---
 
-# Privacy
-
 Blackthorn Field Notes is a public website. The goal is to keep this site simple, respectful, and as low-intrusion as practical while still allowing readers to subscribe, contact me, support the work, and share posts.
 
 ## What This Site Collects Directly
