@@ -4,8 +4,6 @@ title: Support
 permalink: /support/
 ---
 
-# Support C. J. Blackthorn
-
 My public writing is free to read.
 
 If my essays, field notes, poems, stories, advocacy work, or other creative projects have helped you feel seen, understood, or less alone, you can support the work here.
