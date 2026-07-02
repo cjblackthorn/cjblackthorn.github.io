@@ -5,8 +5,6 @@ permalink: /categories/technology/
 description: Technology essays and field notes from Blackthorn Field Notes.
 ---
 
-# Technology
-
 Essays and field notes about technology, privacy, cybersecurity, platforms, digital systems, and the human consequences of technical choices.
 
 <ul class="post-list">
