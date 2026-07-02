@@ -5,8 +5,6 @@ permalink: /categories/disability/
 description: Disability essays and field notes from Blackthorn Field Notes.
 ---
 
-# Disability
-
 Essays and field notes about disabled life, access, survival, visibility, and the cost of being forced to navigate systems that were not built to hold us.
 
 <ul class="post-list">
