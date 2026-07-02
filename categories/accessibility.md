@@ -5,8 +5,6 @@ permalink: /categories/accessibility/
 description: Accessibility essays and field notes from Blackthorn Field Notes.
 ---
 
-# Accessibility
-
 Essays and field notes about access, mobility, design, public spaces, technology, and what it means to build a world people can actually live in.
 
 <ul class="post-list">
