@@ -358,6 +358,10 @@ button:hover {
   transform: translateY(0.04em);
 }
 
+.site-menu-details[open] > summary::after {
+  transform: rotate(180deg) translateY(-0.04em);
+}
+
 .site-submenu-list {
   position: absolute;
   right: 0;

@@ -1,13 +1,22 @@
 document.addEventListener('DOMContentLoaded', function () {
   const input = document.getElementById('search-input');
   const results = document.getElementById('search-results');
+  const status = document.getElementById('search-status');
 
   if (!input || !results) return;
 
   let posts = [];
+  let searchReady = false;
+  let searchFailed = false;
 
   function clearResults() {
     results.replaceChildren();
+  }
+
+  function setStatus(message) {
+    if (status) {
+      status.textContent = message;
+    }
   }
 
   function appendEmptyResult(title, message) {
@@ -43,34 +52,81 @@ document.addEventListener('DOMContentLoaded', function () {
     results.appendChild(item);
   }
 
-  fetch('/search.json')
-    .then(response => response.json())
-    .then(data => {
-      posts = data;
-    })
-    .catch(error => {
-      console.error('Search index failed to load:', error);
-      appendEmptyResult('Search is unavailable.', 'Please try browsing by category instead.');
-    });
+  function announceMatchCount(count) {
+    if (count === 1) {
+      setStatus('1 Field Note found.');
+      return;
+    }
 
-  input.addEventListener('input', function () {
+    setStatus(`${count} Field Notes found.`);
+  }
+
+  function runSearch() {
     const query = input.value.toLowerCase().trim();
     clearResults();
+    results.removeAttribute('aria-busy');
 
     if (query.length < 2) {
+      setStatus('');
+      return;
+    }
+
+    if (searchFailed) {
+      appendEmptyResult('Search is unavailable.', 'Please try browsing by category instead.');
+      setStatus('Search is unavailable.');
+      return;
+    }
+
+    if (!searchReady) {
+      results.setAttribute('aria-busy', 'true');
+      appendEmptyResult('Search is loading.', 'Results will appear when the index is ready.');
+      setStatus('Search is loading.');
       return;
     }
 
     const matches = posts.filter(post => {
-      const searchableText = `${post.title} ${post.description} ${post.categories} ${post.tags} ${post.content}`.toLowerCase();
+      const searchableText = [
+        post.title,
+        post.description,
+        post.categories,
+        post.tags,
+        post.content
+      ].filter(Boolean).join(' ').toLowerCase();
+
       return searchableText.includes(query);
-    }).slice(0,10);
+    }).slice(0, 10);
 
     if (matches.length === 0) {
       appendEmptyResult('No Field Notes found.', 'Try another topic or keyword.');
+      setStatus('No Field Notes found.');
       return;
     }
 
+    announceMatchCount(matches.length);
     matches.forEach(appendPostResult);
-  });
+  }
+
+  fetch('/search.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Search index request failed.');
+      }
+
+      return response.json();
+    })
+    .then(data => {
+      posts = Array.isArray(data) ? data : [];
+      searchReady = true;
+
+      if (input.value.trim().length >= 2) {
+        runSearch();
+      }
+    })
+    .catch(error => {
+      console.error('Search index failed to load:', error);
+      searchFailed = true;
+      runSearch();
+    });
+
+  input.addEventListener('input', runSearch);
 });

@@ -39,13 +39,16 @@ image: /assets/images/blackthorn-field-notes-card.PNG
   <h2>Search the Field Notes</h2>
   <p class="search-helper">Search by topic, category, or keyword.</p>
   <input
-    type="text"
+    type="search"
     id="search-input"
     placeholder="Search articles..."
     aria-label="Search articles"
     aria-controls="search-results"
+    autocomplete="off"
+    spellcheck="false"
   >
-  <ul id="search-results" aria-live="polite" aria-label="Search results"></ul>
+  <p id="search-status" class="visually-hidden" aria-live="polite" aria-atomic="true"></p>
+  <ul id="search-results" aria-label="Search results"></ul>
 </section>
 
 {% assign featured_posts = site.posts | where: 'featured', true | sort: 'featured_order' %}

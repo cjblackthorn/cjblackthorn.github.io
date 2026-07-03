@@ -8,14 +8,21 @@
       >
     </a>
 
-    <input type="checkbox" id="site-menu-toggle" class="site-menu-toggle" aria-label="Toggle navigation menu">
+    <input type="checkbox" id="site-menu-toggle" class="site-menu-toggle" aria-hidden="true" tabindex="-1">
 
-    <label for="site-menu-toggle" class="site-menu-button">
+    <label
+      for="site-menu-toggle"
+      class="site-menu-button"
+      role="button"
+      tabindex="0"
+      aria-controls="site-menu-list"
+      aria-expanded="false"
+      data-site-menu-button>
       <span class="site-menu-icon">☰</span>
       <span>Menu</span>
     </label>
 
-    <ul class="site-menu-list">
+    <ul id="site-menu-list" class="site-menu-list" data-site-menu-list>
       {% for item in site.data.navigation %}
         {% if item.children %}
           <li class="site-menu-item site-menu-has-children">
