@@ -204,6 +204,12 @@ body.high-contrast .search-empty {
   border-color: var(--border);
 }
 
+body.high-contrast .followit--follow-form-container .preview-submit-button button {
+  background-color: #000000;
+  border-color: var(--border);
+  color: #ffffff;
+}
+
 :where(a, button, input, textarea, select, summary):focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 3px;
