@@ -72,21 +72,27 @@
           <a href="{{ '/contact/' | relative_url }}">Contact</a>
         </p>
 
-        <section class="footer-subscribe" aria-label="Subscribe">
+        <section class="footer-subscribe" aria-labelledby="footer-subscribe-heading">
           <div class="followit--follow-form-container" attr-a attr-b attr-c attr-d attr-e attr-f>
             <form action="https://api.follow.it/subscription-form/d2VUT2NHS2N6SVVLQ3NyRktQL05BSmJoUmJWNmNjeE0rZHdZeVUrSGp3K0tJZThEM3hSd2NCUi9yU1B1allyc0tINzdjNEFHOTQ0a2NiaUxpaFlETnpWTVNCOWFxTlJ5dkJ2NmMwRzhQT1ExSDJmdExiTU00QnNJbmtiRTRLZVB8Mjh1SzQxZi82b0dKOFRHTDJ0TGJydHc4dXlKOVhWejJLcGNqQ0U5dlpMbz0=/8" method="post">
               <div class="form-preview">
                 <div class="preview-heading">
-                  <h5>Get new posts by email:</h5>
+                  <h2 id="footer-subscribe-heading">Get new posts by email</h2>
                 </div>
 
                 <div class="preview-input-field">
                   <label class="visually-hidden" for="footer-subscribe-email">Email address</label>
+                  <p id="footer-subscribe-help" class="footer-subscribe-help">
+                    Occasional updates. Unsubscribe anytime.
+                  </p>
                   <input
                     id="footer-subscribe-email"
                     type="email"
                     name="email"
                     required
+                    autocomplete="email"
+                    inputmode="email"
+                    aria-describedby="footer-subscribe-help"
                     placeholder="Enter your email"
                     spellcheck="false">
                 </div>
@@ -97,9 +103,10 @@
               </div>
             </form>
 
-            <a href="https://follow.it" class="powered-by-line">
+            <a href="https://follow.it" class="powered-by-line" target="_blank" rel="noopener">
               Powered by
-              <img src="https://follow.it/images/colored-logo.svg" alt="follow.it" height="17">
+              <img src="https://follow.it/images/colored-logo.svg" alt="" height="17">
+              <span class="visually-hidden">follow.it</span>
             </a>
           </div>
         </section>

@@ -773,17 +773,23 @@ button:hover {
   margin-top: 2rem;
 }
 
+.followit--follow-form-container {
+  max-width: 560px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .followit--follow-form-container .form-preview {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 30px;
-  padding: clamp(17px, 5%, 40px) clamp(17px, 7%, 50px);
+  margin-top: 1rem;
+  padding: clamp(1rem, 5%, 2rem);
   max-width: none;
-  border-radius: 6px;
-  border: 1px solid #cccccc;
-  background-color: #ffffff;
-  box-shadow: 0 5px 25px rgba(34, 60, 47, 0.25);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background-color: var(--bg-soft);
+  box-shadow: none;
 }
 
 .followit--follow-form-container .form-preview,
@@ -791,69 +797,76 @@ button:hover {
   box-sizing: border-box;
 }
 
-.followit--follow-form-container .preview-heading h5 {
+.followit--follow-form-container .preview-heading h2 {
   margin: 0;
-  color: #000000;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-weight: bold;
+  color: var(--text);
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.footer-subscribe-help {
+  margin-bottom: 0.6rem;
+  color: var(--muted);
+  font-size: 0.9rem;
   text-align: center;
 }
 
 .followit--follow-form-container .preview-input-field {
-  margin-top: 20px;
+  margin-top: 1rem;
   width: 100%;
 }
 
 .followit--follow-form-container .preview-input-field input {
   width: 100%;
-  height: 40px;
-  border-radius: 6px;
-  border: 2px solid #e9e8e8;
-  background-color: #ffffff;
-  color: #000000;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
+  min-height: 44px;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background-color: var(--bg);
+  color: var(--text);
+  font: inherit;
+  font-size: 1rem;
   text-align: center;
-  outline: none;
 }
 
 .followit--follow-form-container .preview-input-field input::placeholder {
-  color: #000000;
-  opacity: 1;
+  color: var(--muted);
+  opacity: 0.9;
 }
 
 .followit--follow-form-container .preview-submit-button {
-  margin-top: 10px;
+  margin-top: 0.75rem;
   width: 100%;
 }
 
 .followit--follow-form-container .preview-submit-button button {
   width: 100%;
-  height: 40px;
-  border: 0;
-  border-radius: 6px;
-  background-color: #000000;
+  min-height: 44px;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background-color: var(--accent);
   color: #ffffff;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-weight: bold;
+  font: inherit;
+  font-weight: 800;
   text-align: center;
 }
 
 .followit--follow-form-container .preview-submit-button button:hover {
+  background-color: var(--link-hover);
   cursor: pointer;
 }
 
 .followit--follow-form-container .powered-by-line {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  margin-top: 10px;
-  color: #231f20;
-  font-family: Arial, sans-serif;
-  font-size: 13px;
+  min-height: 44px;
+  width: fit-content;
+  margin: 0.65rem auto 0;
+  color: var(--muted);
+  font-size: 0.85rem;
   text-align: center;
   text-decoration: none;
 }
