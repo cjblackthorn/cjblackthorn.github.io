@@ -3,8 +3,8 @@
    ========================= */
 
 .site-menu-list {
-  overflow-y: auto;
-  max-height: calc(100vh - 120px);
+  overflow: visible;
+  max-height: none;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -221,6 +221,13 @@ body.high-contrast .followit--follow-form-container .preview-submit-button butto
 
 .site-menu-details:not([open]) > .site-submenu-list {
   display: none;
+}
+
+@media (max-width: 760px) {
+  .site-menu-list {
+    overflow-y: auto;
+    max-height: calc(100vh - 120px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
