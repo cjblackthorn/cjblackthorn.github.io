@@ -36,23 +36,23 @@ layout: default
   {% endif %}
 
   {% if page.content_note %}
-    <section class="content-note" aria-label="Content note">
-      <strong>Content note:</strong>
-      <span>{{ page.content_note }}</span>
+    <section class="content-note" aria-labelledby="content-note-heading">
+      <h2 id="content-note-heading" class="content-note-title">Content note</h2>
+      <p>{{ page.content_note }}</p>
     </section>
   {% endif %}
 
   {% if page.plain_summary %}
-    <section class="plain-summary" aria-label="Plain language summary">
-      <h2>In plain terms</h2>
+    <section class="plain-summary" aria-labelledby="plain-summary-heading">
+      <h2 id="plain-summary-heading">In plain terms</h2>
       <p>{{ page.plain_summary }}</p>
     </section>
   {% endif %}
 
-  <section class="article-reader" aria-label="Read article aloud">
-    <span class="article-reader-label">Listen to this article:</span>
+  <section class="article-reader" aria-labelledby="article-reader-heading">
+    <span id="article-reader-heading" class="article-reader-label">Listen to this article:</span>
 
-    <button class="reader-button" type="button" data-read-article>
+    <button class="reader-button" type="button" data-read-article aria-controls="post-content">
       Read aloud
     </button>
 
@@ -85,7 +85,7 @@ layout: default
     <ol data-article-toc-list></ol>
   </nav>
 
-  <div class="post-content">
+  <div id="post-content" class="post-content">
     {{ content }}
   </div>
 
