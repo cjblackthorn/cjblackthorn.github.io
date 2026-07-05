@@ -107,6 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const item = document.createElement('li');
       const link = document.createElement('a');
 
+      item.className = heading.tagName.toLowerCase() === 'h3' ? 'article-toc-subitem' : 'article-toc-item';
       link.href = `#${heading.id}`;
       link.textContent = heading.textContent;
       item.appendChild(link);

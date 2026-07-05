@@ -443,13 +443,33 @@ button:hover {
   margin-bottom: 1.25rem;
 }
 
+.post-header,
+.content-note,
+.plain-summary,
+.article-reader,
+.article-toc,
+.post-content,
+.print-source,
+.post-footer {
+  max-width: 74ch;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.post > hr {
+  max-width: 74ch;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .post-title {
   margin-bottom: 0.35rem;
   line-height: 1.15;
   font-size: clamp(1.6rem, 7vw, 2.6rem) !important;
   text-wrap: balance;
-  overflow-wrap: normal;
+  overflow-wrap: anywhere;
   word-break: normal;
+  hyphens: auto;
 }
 
 .post-meta {
@@ -457,27 +477,57 @@ button:hover {
 }
 
 .post-content {
-  line-height: 1.55;
+  line-height: 1.7;
+  overflow-wrap: break-word;
+}
+
+.post-content > :first-child {
+  margin-top: 0;
 }
 
 .post-content p {
-  margin-bottom: 0.85rem;
+  margin-bottom: 1.1rem;
+}
+
+.post-content ul,
+.post-content ol {
+  margin-bottom: 1.15rem;
+}
+
+.post-content li + li {
+  margin-top: 0.35rem;
+}
+
+.post-content li > ul,
+.post-content li > ol {
+  margin-top: 0.35rem;
 }
 
 .post-content h2 {
-  margin-top: 1.6rem;
-  margin-bottom: 0.55rem;
+  margin-top: 2.1rem;
+  margin-bottom: 0.75rem;
   line-height: 1.2;
   font-size: clamp(1.25rem, 5vw, 1.65rem) !important;
   text-wrap: balance;
+  scroll-margin-top: 8.5rem;
 }
 
 .post-content h3 {
-  margin-top: 1.2rem;
-  margin-bottom: 0.45rem;
+  margin-top: 1.6rem;
+  margin-bottom: 0.6rem;
   line-height: 1.25;
   font-size: clamp(1.1rem, 4vw, 1.35rem) !important;
   text-wrap: balance;
+  scroll-margin-top: 8.5rem;
+}
+
+.post-content blockquote {
+  margin: 1.5rem 0;
+}
+
+.post-content img {
+  border: 1px solid var(--border);
+  border-radius: 8px;
 }
 
 .post-list > li {
