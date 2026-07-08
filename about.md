@@ -11,6 +11,9 @@ image: /assets/images/cj-blackthorn.PNG
   <img
     src="/assets/images/cj-blackthorn.PNG"
     alt="Portrait of C. J. Blackthorn"
+    width="1122"
+    height="1402"
+    decoding="async"
     class="author-photo"
   />
 

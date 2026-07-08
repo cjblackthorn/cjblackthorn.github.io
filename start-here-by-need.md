@@ -4,7 +4,7 @@ title: Start Here by Need
 description: A reader guide for finding Blackthorn Field Notes by what brought you here.
 permalink: /start-here-by-need/
 image: /assets/images/blackthorn-field-notes-card.PNG
-plain_summary: "This page helps readers find essays by need, including disability, relationships, systems, survival, technology, services, and support."
+plain_summary: "This page helps readers find essays by need, including disability, relationships, systems, survival, technology, support, and Blackthorn Enterprises."
 ---
 
 Not everyone arrives here looking for the same thing.
@@ -72,17 +72,19 @@ If the writing helps you, you can support it through the support page.
 
 [Support C. J. Blackthorn](/support/)
 
-## If You Want to Work With Me
+## If You Are Looking for Blackthorn Enterprises
 
-I occasionally consider relationship and life coaching, professional collaboration, writing, accessibility, technology, and systems-related inquiries on a limited, case-by-case basis.
+Blackthorn Field Notes is the public writing and publishing home.
 
-Availability is limited and depends on my capacity, schedule, and whether the request is a good fit.
+Professional work, business inquiries, collaboration, consulting, systems support, and future offerings belong under Blackthorn Enterprises.
 
-[View Services](/services/)
+[Visit Blackthorn Enterprises](https://blackthorn.enterprises/){:target="_blank" rel="noopener"}
+
+[Read how this site separates Field Notes from Blackthorn Enterprises](/services/)
 
 ## If You Want to Contact Me
 
-Use the contact page for reader notes, professional inquiries, accessibility feedback, site/security concerns, publishing questions, and limited coaching inquiries.
+Use the contact page for reader notes, accessibility feedback, site or security concerns, publishing questions, and messages about the writing.
 
 A reply is not guaranteed.
 

@@ -6,6 +6,8 @@ categories: [technology, systems]
 tags: [passwords, cybersecurity, password-managers, 2fa, mfa, privacy, online-safety]
 description: "Why password managers matter, why password sharing is dangerous, and why multi-factor authentication should be standard for everyone."
 image: /assets/images/password-security-basic-survival.PNG
+image_width: 1536
+image_height: 1024
 ---
 
 Most people imagine hacking as something cinematic.

@@ -41,6 +41,8 @@ defaults:
       path: ""
     values:
       image: /assets/images/blackthorn-field-notes-card.PNG
+      image_width: 1731
+      image_height: 909
   - scope:
       path: ""
       type: "posts"

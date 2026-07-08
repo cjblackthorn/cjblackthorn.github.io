@@ -30,6 +30,12 @@ layout: default
       <img
         src="{{ page.image | relative_url }}"
         alt="{{ page.title }}"
+        {% if page.image_width and page.image_height %}
+          width="{{ page.image_width }}"
+          height="{{ page.image_height }}"
+        {% endif %}
+        decoding="async"
+        fetchpriority="high"
         class="post-hero-image"
       >
     </figure>
