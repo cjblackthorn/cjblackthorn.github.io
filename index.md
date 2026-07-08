@@ -11,6 +11,10 @@ image: /assets/images/blackthorn-field-notes-card.PNG
   <img
     src="/assets/images/blackthorn-field-notes-card.PNG"
     alt="Blackthorn Field Notes banner"
+    width="1731"
+    height="909"
+    decoding="async"
+    fetchpriority="high"
     class="home-hero-image"
   >
 

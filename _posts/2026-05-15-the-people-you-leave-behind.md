@@ -6,6 +6,8 @@ categories: [relationships, boundaries]
 tags: [lgbtq, trans-rights, queer-history, advocacy, solidarity, culture]
 description: "An essay on LGBTQ+ solidarity, historical memory, and the growing push to separate trans and queer people from the community that once survived together."
 image: /assets/images/worn-pride-flag.PNG
+image_width: 1536
+image_height: 1024
 ---
 
 There is a phrase spreading online right now:

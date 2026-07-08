@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Contact
-description: Contact C. J. Blackthorn for reader notes, accessibility issues, professional inquiries, publishing questions, and limited coaching inquiries.
+description: Contact C. J. Blackthorn for reader notes, accessibility issues, site concerns, publishing questions, and messages about Blackthorn Field Notes.
 permalink: /contact/
 image: /assets/images/blackthorn-field-notes-card.PNG
 plain_summary: "This page explains how to contact C. J. Blackthorn while respecting availability, boundaries, and the limits of public contact."
@@ -9,7 +9,7 @@ plain_summary: "This page explains how to contact C. J. Blackthorn while respect
 
 Thank you for reading Blackthorn Field Notes.
 
-I welcome thoughtful reader notes, professional inquiries, accessibility feedback, site or security concerns, publishing-related messages, and limited relationship or life coaching inquiries. I read what I can, but I cannot promise a personal reply to every message.
+I welcome thoughtful reader notes, accessibility feedback, site or security concerns, publishing-related messages, and messages about the writing. I read what I can, but I cannot promise a personal reply to every message.
 
 ## General Reader Notes
 
@@ -27,21 +27,11 @@ Supporter updates, behind-the-scenes notes, and future community options may liv
 
 ## Professional Inquiries
 
-For writing, publishing, collaboration, consultation, media, accessibility, technology, or systems-related inquiries, use the contact form and choose **Professional inquiry**.
+Blackthorn Field Notes is the public writing and publishing home.
 
-Professional work, consulting, review, collaboration, or scheduled time may require a paid agreement.
+Professional work, business inquiries, collaboration, consulting, systems support, and future offerings belong under Blackthorn Enterprises.
 
-## Relationship and Life Coaching
-
-I occasionally offer relationship and life coaching support on a limited, case-by-case basis.
-
-This work may include help with communication, boundaries, conflict patterns, relationship repair, self-advocacy, life transitions, systems navigation, and practical emotional clarity. Availability is limited and depends on my capacity, schedule, and whether the request is a good fit.
-
-Coaching is not crisis support, therapy, legal advice, medical advice, or a replacement for licensed professional care.
-
-Because my availability varies, scheduling must be flexible. If coaching slots are open, you can submit an inquiry through the contact form and choose **Relationship / life coaching inquiry**.
-
-Submitting an inquiry does not guarantee availability, acceptance, or a personal response.
+[Visit Blackthorn Enterprises](https://blackthorn.enterprises/){:target="_blank" rel="noopener"}
 
 ## Boundaries
 

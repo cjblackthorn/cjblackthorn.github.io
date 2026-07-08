@@ -128,6 +128,15 @@ Files involved:
 - `assets/css/style.scss` — core homepage/card styling
 - `assets/css/enhancements.css` — small spacing refinements
 
+### Categories Wayfinding
+
+Files involved:
+
+- `categories.html` — top-level category guide and category grid descriptions
+- `categories/` — individual category landing pages
+- `_data/navigation.yml` — category dropdown order in the global navigation
+- `assets/css/style.scss` — category grid styling
+
 ### Global Site Shell
 
 Files involved:
@@ -161,6 +170,12 @@ Files involved:
 
 - `_layouts/default.html` — controls markup and preference script
 - `assets/css/enhancements.css` — control styling
+
+### Production Smoke Testing
+
+Files involved:
+
+- `docs/qa/live-production-smoke-test.md` — checklist for live desktop, mobile, article, search, and subscribe checks after deployment
 
 ## Unmapped / Needs Future Inspection
 
