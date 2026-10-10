@@ -63,7 +63,7 @@ GEM
       bigdecimal
       rake (~> 13.3)
     hashery (2.1.2)
-    html-proofer (5.2.1)
+    html-proofer (5.2.2)
       addressable (~> 2.3)
       async (~> 2.1)
       benchmark (~> 0.5)
@@ -234,7 +234,7 @@ CHECKSUMS
   google-protobuf (4.36.2-x86_64-linux-gnu) sha256=d25a820873e423f1d209ae8c672a4a28b019e2429debd0901d26670a0b4e14db
   google-protobuf (4.36.2-x86_64-linux-musl) sha256=0fa17686c896da96a60a705e56ddc7d4ff56413f52787c655bd4c9fb33ffe14f
   hashery (2.1.2) sha256=d239cc2310401903f6b79d458c2bbef5bf74c46f3f974ae9c1061fb74a404862
-  html-proofer (5.2.1) sha256=fdd958a7cbf9c3255fb96fe7cfc4e611f64e2706e469488a3326309ad007d2fd
+  html-proofer (5.2.2) sha256=6e5e63c89ef9413246eeffaeba8dd03db62546992d7a2b85d166ac2a5903a241
   http_parser.rb (0.8.1) sha256=9ae8df145b39aa5398b2f90090d651c67bd8e2ebfe4507c966579f641e11097a
   i18n (1.15.2) sha256=00f9eb62412fe593b2a65a97daa75300d37abb8f7202ec748e94b6d46a9dd1b5
   io-event (1.14.3) sha256=c15cbbdd3b1cbf65bb87153a4c5bbc6d7dc07a357f6154601d5290f39ab2ac06
