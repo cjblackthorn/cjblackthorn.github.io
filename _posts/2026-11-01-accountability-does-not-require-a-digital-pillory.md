@@ -9,7 +9,7 @@ description: "Publicly shaming identifiable teenagers over Halloween candy confu
 
 *Teenagers taking more candy than they should is selfish. Posting their identifiable faces across neighborhood social media is still a disproportionate response. If the lesson is supposed to be community responsibility, adults have to model it too.*
 
-**November 1, 2026 | Blackthorn Field Notes**
+**November 1, 2026 · Blackthorn Field Notes**
 
 Every November 1, neighborhood social media seems to host the same argument.
 
